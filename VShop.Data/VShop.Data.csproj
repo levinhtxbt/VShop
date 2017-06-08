@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData\SampleData.cs" />
     <Compile Include="VShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,8 +74,6 @@
       <Name>VShop.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SampleData\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

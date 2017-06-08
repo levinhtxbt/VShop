@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using VShop.Data;
@@ -23,6 +26,14 @@ namespace VShop.Repository
         protected VShopDbContext DbContext
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
+        }
+
+        internal IDbConnection Connection
+        {
+            get
+            {
+                return new SqlConnection(ConfigurationManager.ConnectionStrings["VShopConnectionString"].ConnectionString);
+            }
         }
 
         #endregion Properties

@@ -14,18 +14,11 @@ namespace VShop.Data.Migrations
 
         protected override void Seed(VShop.Data.VShopDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            SampleData.SampleData.CreateUser(context);
+            SampleData.SampleData.AddProductCategorySample(context);
+            SampleData.SampleData.AddBrandSample(context);
+            SampleData.SampleData.AddProductSimple(context);
+            SampleData.SampleData.AddSlideSample(context);
         }
     }
 }

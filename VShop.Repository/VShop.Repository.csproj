@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,12 +50,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implements\IProductRepository.cs" />
+    <Compile Include="Interfaces\IBrandRepository.cs" />
+    <Compile Include="Interfaces\IFooterRepository.cs" />
+    <Compile Include="Interfaces\ILogErrorRepository.cs" />
+    <Compile Include="Interfaces\IMenuGroupRepository.cs" />
+    <Compile Include="Interfaces\IMenuRepository.cs" />
+    <Compile Include="Interfaces\IOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\IOrderRepository.cs" />
+    <Compile Include="Interfaces\IPageRepository.cs" />
+    <Compile Include="Interfaces\IPostCategoryRepository.cs" />
+    <Compile Include="Interfaces\IPostRepository.cs" />
+    <Compile Include="Interfaces\IPostTagRepository.cs" />
+    <Compile Include="Interfaces\IProductAttributeRepository.cs" />
+    <Compile Include="Interfaces\IProductAttributeValueRepository.cs" />
+    <Compile Include="Interfaces\IProductCategoryRepository.cs" />
+    <Compile Include="Interfaces\IProductRepository.cs" />
+    <Compile Include="Interfaces\IProductTagRepository.cs" />
+    <Compile Include="Interfaces\IProduct_ProductAttribute_MappingRepository.cs" />
+    <Compile Include="Interfaces\ISlideRepository.cs" />
+    <Compile Include="Interfaces\ISupportOnlineRepository.cs" />
+    <Compile Include="Interfaces\ISystemConfigRepository.cs" />
+    <Compile Include="Interfaces\ITagRepository.cs" />
+    <Compile Include="Interfaces\IVisitorStatisticRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\BaseRepository.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Interfaces\ProductRepository.cs" />
+    <Compile Include="Implements\BrandRepository.cs" />
+    <Compile Include="Implements\FooterRepository.cs" />
+    <Compile Include="Implements\LogErrorRepository.cs" />
+    <Compile Include="Implements\MenuGroupRepository.cs" />
+    <Compile Include="Implements\MenuRepository.cs" />
+    <Compile Include="Implements\OrderDetailRepository.cs" />
+    <Compile Include="Implements\OrderRepository.cs" />
+    <Compile Include="Implements\PageRepository.cs" />
+    <Compile Include="Implements\PostCategoryRepository.cs" />
+    <Compile Include="Implements\PostRepository.cs" />
+    <Compile Include="Implements\PostTagRepository.cs" />
+    <Compile Include="Implements\ProductAttributeRepository.cs" />
+    <Compile Include="Implements\ProductAttributeValueRepository.cs" />
+    <Compile Include="Implements\ProductCategoryRepository.cs" />
+    <Compile Include="Implements\ProductRepository.cs" />
+    <Compile Include="Implements\ProductTagRepository.cs" />
+    <Compile Include="Implements\Product_ProductAttribute_MappingRepository.cs" />
+    <Compile Include="Implements\SlideRepository.cs" />
+    <Compile Include="Implements\SupportOnlineRepository.cs" />
+    <Compile Include="Implements\SystemConfigRepository.cs" />
+    <Compile Include="Implements\TagRepository.cs" />
+    <Compile Include="Implements\VisitorStatisticRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -40,11 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implements\LogService.cs" />
+    <Compile Include="Interfaces\ILogService.cs" />
+    <Compile Include="Implements\ProductService.cs" />
+    <Compile Include="Interfaces\IProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Implements\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\VShop.Model\VShop.Model.csproj">
+      <Project>{BE291CB1-CE16-4E12-8C37-42CE64999AFE}</Project>
+      <Name>VShop.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VShop.Repository\VShop.Repository.csproj">
+      <Project>{DB2E52B1-3C25-4048-A477-3E294A92262D}</Project>
+      <Name>VShop.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
