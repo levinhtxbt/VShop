@@ -47,17 +47,18 @@ build_script:
 #       test configuration        #
 #---------------------------------#
 test:
-  # assemblies:
-  #   only:
-  #     - '**\*.UnitTest.dll'
-  # categories:
-  #   only:
-  #     - A
-  #     - B
+  assemblies:
+    only:
+      - '**\*.UnitTest.dll'
+  categories:
+    only:
+      - A
+      - B
 before_test:
 
 test_script:
-  vstest.console /logger:Appveyor C:\projects\vshop\VShop.UnitTest\bin\%CONFIGURATION%\VShop.UnitTest.dll /InIsolation /Enablecodecoverage /UseVsixExtensions:true /Framework:framework45
+# vstest.console /logger:Appveyor C:\projects\vshop\VShop.UnitTest\bin\%CONFIGURATION%\VShop.UnitTest.dll /InIsolation /Enablecodecoverage /UseVsixExtensions:true /Framework:framework45
+  vstest.console /logger:Appveyor <assembly> /InIsolation /Enablecodecoverage /UseVsixExtensions:true /Framework:framework45
 # after_test:
 #   - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"vstest.console.exe" -targetargs:"C:\projects\vshop\VShop.UnitTest\bin\%CONFIGURATION%\VShop.UnitTest.dll" -filter:"+[Rackspace*]* +[UnitTest*]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\vshop_coverage.xml
 #   - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
