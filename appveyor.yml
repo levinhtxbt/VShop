@@ -50,7 +50,7 @@ test:
   # only assemblies to test
   assemblies:
     only:
-      - VShop.UnitTest.dll
+      - '**\*.UnitTest.dll'
 
   # only categories to test
   categories:
@@ -66,7 +66,7 @@ after_test:
 
 # to run your custom scripts instead of automatic tests
 test_script:
-  vstest.console /logger:Appveyor C:\projects\vshop\VShop.UnitTest\bin\Release\VShop.UnitTest.dll /InIsolation /TestCaseFilter:"TestCategory=A|B" /Framework:framework45
+  vstest.console /logger:Appveyor C:\projects\vshop\VShop.UnitTest\bin\Release\VShop.UnitTest.dll /InIsolation /TestCaseFilter:"TestCategory=A|B" /Framework:framework45 /UseVsixExtensions:true
 # upload results to AppVeyor
 #$wc = New-Object 'System.Net.WebClient'
 #$wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\xunit-results.xml))
