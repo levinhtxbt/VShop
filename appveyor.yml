@@ -71,7 +71,7 @@ after_test:
   - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"vstest.console.exe" -targetargs:"C:\projects\vshop\VShop.UnitTest\bin\%CONFIGURATION%\VShop.UnitTest.dll" -filter:"+[Rackspace*]* +[UnitTest*]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\vshop_coverage.xml
 
 # upload results to AppVeyor
-$wc = New-Object 'System.Net.WebClient'
-$wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\vshop_coverage.xml))
+  - $wc = New-Object 'System.Net.WebClient'
+  - $wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\vshop_coverage.xml))
 # to disable automatic tests
 #test: off
