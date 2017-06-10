@@ -22,7 +22,7 @@ namespace VShop.UnitTest.ServiceTest
             _objService = new ProductService(_mockRepository.Object, _mockUOW.Object);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("B")]
         public void AddNewProduct_ShouldOk()
         {
             var product = new Product()

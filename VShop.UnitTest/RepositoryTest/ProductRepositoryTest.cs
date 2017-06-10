@@ -20,20 +20,13 @@ namespace VShop.UnitTest.RepositoryTest
             uow = new UnitOfWork(dbFactory);
         }
 
-        //[TestMethod]
-        //public void Add_ShouldOK()
-        //{
-        //    var product = new Product()
-        //    {
-        //    };
-        //}
 
-        [TestMethod]
+        [TestMethod, TestCategory("A")]
         public void Add_ShouldFail()
         {
             Product product = new Product();
             var result = objRepository.Add(product);
-            Assert.AreEqual(null, result);
+            Assert.IsNotNull(result);
         }
     }
 }

@@ -4,11 +4,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using VShop.Data;
 using VShop.Model.Models;
 
@@ -29,6 +26,14 @@ namespace VShop.Web.App_Start
         {
             // Plug in your SMS service here to send a text message.
             return Task.FromResult(0);
+        }
+    }
+
+    public class ApplicationUserStore : UserStore<ApplicationUser>
+    {
+        public ApplicationUserStore(VShopDbContext context)
+            : base(context)
+        {
         }
     }
 

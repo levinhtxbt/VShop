@@ -41,3 +41,17 @@ build:
 #verbosity: quiet|minimal|normal|detailed
   verbosity: normal
 
+#---------------------------------#
+#       test configuration        #
+#---------------------------------#
+test:
+  # only assemblies to test
+  assemblies:
+    only:
+      - VShop.UnitTest.dll
+
+  # only categories to test
+  categories:
+    only:
+      - A
+      - B

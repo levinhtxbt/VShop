@@ -1,14 +1,19 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security.DataProtection;
 using Owin;
 using System.Linq;
 using System.Reflection;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using VShop.Data;
+using VShop.Model.Models;
 using VShop.Repository;
 using VShop.Service;
+using VShop.Web.App_Start;
 
 namespace VShop.Web.Configurations
 {
@@ -19,15 +24,18 @@ namespace VShop.Web.Configurations
             var builder = new ContainerBuilder();
             //Register controller for mvc
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+
             //Register controller for api
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
             //Register Infrastructure
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
+
             //Register DbContext
             builder.RegisterType<VShopDbContext>().AsSelf().InstancePerRequest();
 
-            //Asp.net Identity
+            ////Asp.net Identity
             //builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
             //builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             //builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
