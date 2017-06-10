@@ -65,3 +65,6 @@ test_script:
 #   - codecov -f "vshop_coverage.xml"
 #$wc = New-Object 'System.Net.WebClient'
 #$wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\vshop_coverage.xml))
+cache:
+  - packages -> **\packages.config 
+  - node_modules   
