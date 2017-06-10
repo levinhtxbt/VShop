@@ -47,24 +47,15 @@ build_script:
 #       test configuration        #
 #---------------------------------#
 test:
-  # only assemblies to test
   assemblies:
     only:
       - '**\*.UnitTest.dll'
-
-  # only categories to test
   categories:
     only:
       - A
       - B
-# scripts to run before tests
 before_test:
 
-
-# scripts to run after tests
-after_test:
-
-# to run your custom scripts instead of automatic tests
 test_script:
   vstest.console /logger:Appveyor C:\projects\vshop\VShop.UnitTest\bin\%CONFIGURATION%\VShop.UnitTest.dll /UseVsixExtensions:true
 after_test:
@@ -74,5 +65,3 @@ after_test:
   - codecov -f "Threading_coverage.xml"
   - $wc = New-Object 'System.Net.WebClient'
   - $wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\vshop_coverage.xml))
-# to disable automatic tests
-#test: off
