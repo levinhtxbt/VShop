@@ -41,6 +41,10 @@ build:
 #verbosity: quiet|minimal|normal|detailed
   verbosity: normal
 
+build_script:
+- cd build
+- powershell -Command .\build.ps1 -VisualStudioVersion "14.0" -InstallSHFB -Verbosity minimal -Logger "${env:ProgramFiles}\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+- cd ..
 #---------------------------------#
 #       test configuration        #
 #---------------------------------#
