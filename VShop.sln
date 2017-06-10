@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VShop.Model", "VShop.Model\VShop.Model.csproj", "{BE291CB1-CE16-4E12-8C37-42CE64999AFE}"
 EndProject
@@ -26,6 +26,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VShop.UnitTest", "VShop.UnitTest\VShop.UnitTest.csproj", "{23EB2786-7A07-4D8F-A1F1-43D8A4FBF7C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VShop.Web", "VShop.Web\VShop.Web.csproj", "{0CB166C4-C35B-4AA9-9BCF-2B1BDC440298}"
+	ProjectSection(ProjectDependencies) = postProject
+		{23EB2786-7A07-4D8F-A1F1-43D8A4FBF7C1} = {23EB2786-7A07-4D8F-A1F1-43D8A4FBF7C1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VShop.Mapping", "VShop.Mapping\VShop.Mapping.csproj", "{FF1753B3-EE4A-434D-A15A-7A8933723265}"
 EndProject

@@ -1,29 +1,29 @@
 #---------------------------------#
 #      general configuration      #
 #---------------------------------#
-
 # version format
 version: 1.0.{build}
-
+os: Visual Studio 2015
 # branches to build
+environment:
+  DELAY_TOLERANCE_MS: 50
+  TIMING_GRANULARITY_MS: 30
+init:
+- git config --global core.autocrlf true
 branches:
   # whitelist
   only:
-    - master
-    
+    - master    
 # Build worker image (VM template)
 #image: Visual Studio 2015
-
 #---------------------------------#
 #       build configuration       #
 #---------------------------------#
 
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
-
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
-
 # scripts to run before build
 before_build:
     - nuget restore
@@ -64,7 +64,7 @@ after_test:
 
 # to run your custom scripts instead of automatic tests
 test_script:
-  vstest.console /logger:Appveyor "C:\projects\VShop\VShop.UnitTest\bin\$(configuration)\VShop.UnitTest.dll" /Settings:Local.RunSettings /InIsolation /Framework:framework40
+  vstest.console /logger:Appveyor "C:\projects\VShop\VShop.UnitTest\bin\$(configuration)\VShop.UnitTest.dll"
 # upload results to AppVeyor
 #$wc = New-Object 'System.Net.WebClient'
 #$wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\xunit-results.xml))
