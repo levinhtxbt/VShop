@@ -1,0 +1,42 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# version format
+version: 1.0.{build}
+
+# branches to build
+branches:
+  # whitelist
+  only:
+    - master
+    
+# Build worker image (VM template)
+#image: Visual Studio 2015
+
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+# build platform, i.e. x86, x64, Any CPU. This setting is optional.
+platform: Any CPU
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+build:
+  parallel: true                  # enable MSBuild parallel builds
+  project: VShop.sln              # path to Visual Studio solution or project
+  publish_wap: false              # package Web Application Projects (WAP) for Web Deploy
+  publish_wap_xcopy: false        # package Web Application Projects (WAP) for XCopy deployment
+  publish_azure: false            # package Azure Cloud Service projects and push to artifacts
+  publish_nuget: true             # package projects with .nuspec files and push to artifacts
+  publish_nuget_symbols: true     # generate and publish NuGet symbol packages
+  include_nuget_references: true  # add -IncludeReferencedProjects option while packaging NuGet artifacts
+
+# MSBuild verbosity level
+#verbosity: quiet|minimal|normal|detailed
+  verbosity: normal
+# scripts to run before build
+  before_build:
+    -nuget restore
