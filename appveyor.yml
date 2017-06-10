@@ -55,3 +55,15 @@ test:
     only:
       - A
       - B
+# scripts to run before tests
+before_test:
+
+
+# scripts to run after tests
+after_test:
+
+# to run your custom scripts instead of automatic tests
+test_script:
+  vstest.console /logger:Appveyor <assembly> /Settings:Local.RunSettings /InIsolation /Logger:trx /Framework:framework40
+# to disable automatic tests
+#test: off
