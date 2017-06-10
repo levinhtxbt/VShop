@@ -47,13 +47,13 @@ build_script:
 #       test configuration        #
 #---------------------------------#
 test:
-  assemblies:
-    only:
-      - '**\*.UnitTest.dll'
-  categories:
-    only:
-      - A
-      - B
+  # assemblies:
+  #   only:
+  #     - '**\*.UnitTest.dll'
+  # categories:
+  #   only:
+  #     - A
+  #     - B
 before_test:
 
 test_script:
