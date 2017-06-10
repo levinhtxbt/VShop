@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VShop.Model;
+using VShop.Model.Models;
 
 namespace VShop.Data.SampleData
 {
@@ -11,33 +14,33 @@ namespace VShop.Data.SampleData
     {
         public static void CreateUser(VShopDbContext context)
         {
-            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            //var user = new ApplicationUser()
-            //{
-            //    UserName = "admin",
-            //    Email = "vinh.le@gmail.com",
-            //    EmailConfirmed = true,
-            //    BirthDay = DateTime.Now,
-            //    FirstName = "Vinh",
-            //    LastName = "Le"
-            //};
-            //if (manager.Users.Count(x => x.UserName == "admin") == 0)
-            //{
-            //    manager.Create(user, "12345678");
+            var user = new ApplicationUser()
+            {
+                UserName = "admin",
+                Email = "vinh.le@gmail.com",
+                EmailConfirmed = true,
+                BirthDay = DateTime.Now,
+                FirstName = "Vinh",
+                LastName = "Le"
+            };
+            if (manager.Users.Count(x => x.UserName == "admin") == 0)
+            {
+                manager.Create(user, "12345678");
 
-            //    if (!roleManager.Roles.Any())
-            //    {
-            //        roleManager.Create(new IdentityRole { Name = "Admin" });
-            //        roleManager.Create(new IdentityRole { Name = "User" });
-            //    }
+                if (!roleManager.Roles.Any())
+                {
+                    roleManager.Create(new IdentityRole { Name = "Admin" });
+                    roleManager.Create(new IdentityRole { Name = "User" });
+                }
 
-            //    var adminUser = manager.FindByEmail("vinh.le@gmail.com");
+                var adminUser = manager.FindByEmail("vinh.le@gmail.com");
 
-            //    manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
-            //}
+                manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            }
         }
 
         public static void AddProductCategorySample(VShopDbContext context)

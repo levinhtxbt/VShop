@@ -6,12 +6,13 @@ using VShop.Web.Configurations;
 
 namespace VShop.Web.App_Start
 {
-    public class Startup
+    public  partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
             AutofacConfiguration.Config(app);
             AutoMapperConfiguration.Configure();
+            ConfigureAuth(app);
         }
     }
 }

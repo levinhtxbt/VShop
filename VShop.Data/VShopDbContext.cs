@@ -1,13 +1,20 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using VShop.Model;
+using VShop.Model.Models;
 
 namespace VShop.Data
 {
-    public class VShopDbContext : DbContext
+    public class VShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public VShopDbContext() : base("VShopConnectionString")
         {
             this.Configuration.LazyLoadingEnabled = false;
+        }
+
+        public static VShopDbContext Create()
+        {
+            return new VShopDbContext();
         }
 
         //For Site Component
