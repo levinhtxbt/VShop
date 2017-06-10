@@ -64,7 +64,7 @@ after_test:
 
 # to run your custom scripts instead of automatic tests
 test_script:
-  vstest.console /logger:Appveyor "C:\projects\VShop\VShop.UnitTest\bin\$(configuration)\VShop.UnitTest.dll"
+  vstest.console /logger:Appveyor C:\projects\VShop\VShop.UnitTest\bin\$(configuration)\VShop.UnitTest.dll
 # upload results to AppVeyor
 #$wc = New-Object 'System.Net.WebClient'
 #$wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\xunit-results.xml))
