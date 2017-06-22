@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implements\LogService.cs" />
+    <Compile Include="Implements\ProductCategoryService.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Implements\ProductService.cs" />
+    <Compile Include="Interfaces\IProductCategoryService.cs" />
     <Compile Include="Interfaces\IProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,6 +13,8 @@ namespace VShop.Service
 
         IEnumerable<Product> GetAll();
 
-        IEnumerable<Product> GetPaging(int pageIndex, int pageSize, out int totalCount);
+        Product GetById(int id, string[] include = null);
+
+        IEnumerable<Product> GetByPaging(string keyword, int pageIndex, int pageSize, out int totalCount, string[] include = null);
     }
 }

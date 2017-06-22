@@ -34,7 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>1998</NoWarn>
+    <NoWarn>1998, 0168</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +44,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>1998</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -195,6 +196,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\BaseApiController.cs" />
+    <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -213,6 +215,91 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admin\css\AdminLTE.css" />
+    <Content Include="Content\admin\css\AdminLTE.min.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\admin\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\admin\css\custom.css" />
+    <Content Include="Content\admin\css\skins\skin-black-light.css" />
+    <Content Include="Content\admin\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\admin\css\skins\skin-black.css" />
+    <Content Include="Content\admin\css\skins\skin-black.min.css" />
+    <Content Include="Content\admin\css\skins\skin-blue-light.css" />
+    <Content Include="Content\admin\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\admin\css\skins\skin-blue.css" />
+    <Content Include="Content\admin\css\skins\skin-blue.min.css" />
+    <Content Include="Content\admin\css\skins\skin-green-light.css" />
+    <Content Include="Content\admin\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\admin\css\skins\skin-green.css" />
+    <Content Include="Content\admin\css\skins\skin-green.min.css" />
+    <Content Include="Content\admin\css\skins\skin-purple-light.css" />
+    <Content Include="Content\admin\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\admin\css\skins\skin-purple.css" />
+    <Content Include="Content\admin\css\skins\skin-purple.min.css" />
+    <Content Include="Content\admin\css\skins\skin-red-light.css" />
+    <Content Include="Content\admin\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\admin\css\skins\skin-red.css" />
+    <Content Include="Content\admin\css\skins\skin-red.min.css" />
+    <Content Include="Content\admin\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\admin\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\admin\css\skins\skin-yellow.css" />
+    <Content Include="Content\admin\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\admin\css\skins\_all-skins.css" />
+    <Content Include="Content\admin\css\skins\_all-skins.min.css" />
+    <Content Include="Content\admin\img\avatar.png" />
+    <Content Include="Content\admin\img\avatar04.png" />
+    <Content Include="Content\admin\img\avatar2.png" />
+    <Content Include="Content\admin\img\avatar3.png" />
+    <Content Include="Content\admin\img\avatar5.png" />
+    <Content Include="Content\admin\img\boxed-bg.jpg" />
+    <Content Include="Content\admin\img\boxed-bg.png" />
+    <Content Include="Content\admin\img\credit\american-express.png" />
+    <Content Include="Content\admin\img\credit\cirrus.png" />
+    <Content Include="Content\admin\img\credit\mastercard.png" />
+    <Content Include="Content\admin\img\credit\mestro.png" />
+    <Content Include="Content\admin\img\credit\paypal.png" />
+    <Content Include="Content\admin\img\credit\paypal2.png" />
+    <Content Include="Content\admin\img\credit\visa.png" />
+    <Content Include="Content\admin\img\default-50x50.gif" />
+    <Content Include="Content\admin\img\icons.png" />
+    <Content Include="Content\admin\img\photo1.png" />
+    <Content Include="Content\admin\img\photo2.png" />
+    <Content Include="Content\admin\img\photo3.jpg" />
+    <Content Include="Content\admin\img\photo4.jpg" />
+    <Content Include="Content\admin\img\user1-128x128.jpg" />
+    <Content Include="Content\admin\img\user2-160x160.jpg" />
+    <Content Include="Content\admin\img\user3-128x128.jpg" />
+    <Content Include="Content\admin\img\user4-128x128.jpg" />
+    <Content Include="Content\admin\img\user5-128x128.jpg" />
+    <Content Include="Content\admin\img\user6-128x128.jpg" />
+    <Content Include="Content\admin\img\user7-128x128.jpg" />
+    <Content Include="Content\admin\img\user8-128x128.jpg" />
+    <Content Include="Content\admin\js\app.js" />
+    <Content Include="Content\admin\js\app.min.js" />
+    <Content Include="Content\admin\js\custom.js" />
+    <Content Include="Content\admin\js\demo.js" />
+    <Content Include="Content\admin\js\pages\dashboard.js" />
+    <Content Include="Content\admin\js\pages\dashboard2.js" />
+    <Content Include="Content\libs\angular-route\angular-route.js" />
+    <Content Include="Content\libs\angular-route\angular-route.min.js" />
+    <Content Include="Content\libs\angular-route\index.js" />
+    <Content Include="Content\libs\angular-ui-router\karma.conf.js" />
+    <Content Include="Content\libs\angular-ui-router\migrate\migratewarn.js" />
+    <Content Include="Content\libs\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="Content\libs\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="Content\libs\angular-ui-router\release\resolveService.js" />
+    <Content Include="Content\libs\angular-ui-router\release\resolveService.min.js" />
+    <Content Include="Content\libs\angular-ui-router\release\stateEvents.js" />
+    <Content Include="Content\libs\angular-ui-router\release\stateEvents.min.js" />
+    <Content Include="Content\libs\angular-ui-router\release\ui-router-angularjs.js" />
+    <Content Include="Content\libs\angular-ui-router\release\ui-router-angularjs.min.js" />
+    <Content Include="Content\libs\angular-ui-router\rollup.config.js" />
     <Content Include="Content\libs\angular\angular-csp.css" />
     <Content Include="Content\libs\angular\angular.js" />
     <Content Include="Content\libs\angular\angular.min.js" />
@@ -245,47 +332,17 @@
     <Content Include="Content\libs\bootstrap\js\tooltip.js" />
     <Content Include="Content\libs\bootstrap\js\transition.js" />
     <Content Include="Content\libs\bootstrap\package.js" />
-    <Content Include="Content\libs\jquery\.bower.json" />
-    <Content Include="Content\libs\jquery\.gitattributes" />
-    <Content Include="Content\libs\jquery\.gitignore" />
+    <Content Include="Content\libs\fastclick\lib\fastclick.js" />
     <Content Include="Content\libs\jquery\AUTHORS.txt" />
-    <Content Include="Content\libs\jquery\bower.json" />
-    <Content Include="Content\libs\jquery\build\release.js" />
-    <Content Include="Content\libs\jquery\build\release\cdn.js" />
-    <Content Include="Content\libs\jquery\build\release\dist.js" />
-    <Content Include="Content\libs\jquery\build\release\ensure-sizzle.js" />
-    <Content Include="Content\libs\jquery\build\tasks\build.js" />
-    <Content Include="Content\libs\jquery\build\tasks\dist.js" />
-    <Content Include="Content\libs\jquery\build\tasks\lib\spawn_test.js" />
-    <Content Include="Content\libs\jquery\build\tasks\node_smoke_tests.js" />
-    <Content Include="Content\libs\jquery\build\tasks\promises_aplus_tests.js" />
-    <Content Include="Content\libs\jquery\build\tasks\sourcemap.js" />
-    <Content Include="Content\libs\jquery\build\tasks\testswarm.js" />
     <Content Include="Content\libs\jquery\dist\core.js" />
     <Content Include="Content\libs\jquery\dist\jquery.js" />
     <Content Include="Content\libs\jquery\dist\jquery.min.js" />
-    <Content Include="Content\libs\jquery\dist\jquery.min.map" />
     <Content Include="Content\libs\jquery\dist\jquery.slim.js" />
     <Content Include="Content\libs\jquery\dist\jquery.slim.min.js" />
-    <Content Include="Content\libs\jquery\dist\jquery.slim.min.map" />
-    <Content Include="Content\libs\jquery\external\npo\npo.js" />
-    <Content Include="Content\libs\jquery\external\qunit-assert-step\MIT-LICENSE.txt" />
-    <Content Include="Content\libs\jquery\external\qunit-assert-step\qunit-assert-step.js" />
-    <Content Include="Content\libs\jquery\external\qunit\LICENSE.txt" />
-    <Content Include="Content\libs\jquery\external\qunit\MIT-LICENSE.txt" />
-    <Content Include="Content\libs\jquery\external\qunit\qunit.css" />
-    <Content Include="Content\libs\jquery\external\qunit\qunit.js" />
-    <Content Include="Content\libs\jquery\external\requirejs\require.js" />
-    <Content Include="Content\libs\jquery\external\sinon\LICENSE.txt" />
-    <Content Include="Content\libs\jquery\external\sinon\sinon.js" />
     <Content Include="Content\libs\jquery\external\sizzle\dist\sizzle.js" />
     <Content Include="Content\libs\jquery\external\sizzle\dist\sizzle.min.js" />
-    <Content Include="Content\libs\jquery\external\sizzle\dist\sizzle.min.map" />
     <Content Include="Content\libs\jquery\external\sizzle\LICENSE.txt" />
-    <Content Include="Content\libs\jquery\Gruntfile.js" />
     <Content Include="Content\libs\jquery\LICENSE.txt" />
-    <Content Include="Content\libs\jquery\README.md" />
-    <Content Include="Content\libs\jquery\src\.eslintrc.json" />
     <Content Include="Content\libs\jquery\src\ajax.js" />
     <Content Include="Content\libs\jquery\src\ajax\jsonp.js" />
     <Content Include="Content\libs\jquery\src\ajax\load.js" />
@@ -388,132 +445,55 @@
     <Content Include="Content\libs\jquery\src\var\support.js" />
     <Content Include="Content\libs\jquery\src\var\toString.js" />
     <Content Include="Content\libs\jquery\src\wrap.js" />
-    <Content Include="Content\libs\jquery\src\wrapper.js" />
-    <Content Include="Content\libs\jquery\test\data\1x1.jpg" />
-    <Content Include="Content\libs\jquery\test\data\ajax\content-type.php" />
-    <Content Include="Content\libs\jquery\test\data\ajax\evalScript.php" />
-    <Content Include="Content\libs\jquery\test\data\ajax\method.php" />
-    <Content Include="Content\libs\jquery\test\data\ajax\onunload.html" />
-    <Content Include="Content\libs\jquery\test\data\ajax\unreleasedXHR.html" />
-    <Content Include="Content\libs\jquery\test\data\atom+xml.php" />
-    <Content Include="Content\libs\jquery\test\data\badcall.js" />
-    <Content Include="Content\libs\jquery\test\data\badjson.js" />
-    <Content Include="Content\libs\jquery\test\data\cleanScript.html" />
-    <Content Include="Content\libs\jquery\test\data\core\aliased.html" />
-    <Content Include="Content\libs\jquery\test\data\core\cc_on.html" />
-    <Content Include="Content\libs\jquery\test\data\core\dont_return.php" />
-    <Content Include="Content\libs\jquery\test\data\core\dynamic_ready.html" />
-    <Content Include="Content\libs\jquery\test\data\core\onready.html" />
-    <Content Include="Content\libs\jquery\test\data\css\cssWidthBeforeDocReady.html" />
-    <Content Include="Content\libs\jquery\test\data\dashboard.xml" />
-    <Content Include="Content\libs\jquery\test\data\data\dataAttrs.html" />
-    <Content Include="Content\libs\jquery\test\data\dimensions\documentLarge.html" />
-    <Content Include="Content\libs\jquery\test\data\echoData.php" />
-    <Content Include="Content\libs\jquery\test\data\echoQuery.php" />
-    <Content Include="Content\libs\jquery\test\data\errorWithJSON.php" />
-    <Content Include="Content\libs\jquery\test\data\errorWithText.php" />
-    <Content Include="Content\libs\jquery\test\data\etag.php" />
-    <Content Include="Content\libs\jquery\test\data\event\focusElem.html" />
-    <Content Include="Content\libs\jquery\test\data\event\focusinCrossFrame.html" />
-    <Content Include="Content\libs\jquery\test\data\event\interactiveReady.html" />
-    <Content Include="Content\libs\jquery\test\data\event\onbeforeunload.html" />
-    <Content Include="Content\libs\jquery\test\data\event\promiseReady.html" />
-    <Content Include="Content\libs\jquery\test\data\event\syncReady.html" />
-    <Content Include="Content\libs\jquery\test\data\event\triggerunload.html" />
-    <Content Include="Content\libs\jquery\test\data\headers.php" />
-    <Content Include="Content\libs\jquery\test\data\iframe.html" />
-    <Content Include="Content\libs\jquery\test\data\iframeTest.js" />
-    <Content Include="Content\libs\jquery\test\data\if_modified_since.php" />
-    <Content Include="Content\libs\jquery\test\data\jquery-1.9.1.js" />
-    <Content Include="Content\libs\jquery\test\data\json.php" />
-    <Content Include="Content\libs\jquery\test\data\jsonp.php" />
-    <Content Include="Content\libs\jquery\test\data\json_obj.js" />
-    <Content Include="Content\libs\jquery\test\data\longLoadScript.php" />
-    <Content Include="Content\libs\jquery\test\data\manipulation\iframe-denied.html" />
-    <Content Include="Content\libs\jquery\test\data\manipulation\scripts-context.html" />
-    <Content Include="Content\libs\jquery\test\data\name.html" />
-    <Content Include="Content\libs\jquery\test\data\name.php" />
-    <Content Include="Content\libs\jquery\test\data\nocontent.php" />
-    <Content Include="Content\libs\jquery\test\data\offset\absolute.html" />
-    <Content Include="Content\libs\jquery\test\data\offset\body.html" />
-    <Content Include="Content\libs\jquery\test\data\offset\fixed.html" />
-    <Content Include="Content\libs\jquery\test\data\offset\relative.html" />
-    <Content Include="Content\libs\jquery\test\data\offset\scroll.html" />
-    <Content Include="Content\libs\jquery\test\data\offset\static.html" />
-    <Content Include="Content\libs\jquery\test\data\offset\table.html" />
-    <Content Include="Content\libs\jquery\test\data\params_html.php" />
-    <Content Include="Content\libs\jquery\test\data\readywait.html" />
-    <Content Include="Content\libs\jquery\test\data\script.php" />
-    <Content Include="Content\libs\jquery\test\data\selector\html5_selector.html" />
-    <Content Include="Content\libs\jquery\test\data\selector\sizzle_cache.html" />
-    <Content Include="Content\libs\jquery\test\data\statusText.php" />
-    <Content Include="Content\libs\jquery\test\data\support\bodyBackground.html" />
-    <Content Include="Content\libs\jquery\test\data\support\csp-clean.php" />
-    <Content Include="Content\libs\jquery\test\data\support\csp-log.php" />
-    <Content Include="Content\libs\jquery\test\data\support\csp.js" />
-    <Content Include="Content\libs\jquery\test\data\support\csp.php" />
-    <Content Include="Content\libs\jquery\test\data\support\getComputedSupport.js" />
-    <Content Include="Content\libs\jquery\test\data\test.html" />
-    <Content Include="Content\libs\jquery\test\data\test.php" />
-    <Content Include="Content\libs\jquery\test\data\test2.html" />
-    <Content Include="Content\libs\jquery\test\data\test3.html" />
-    <Content Include="Content\libs\jquery\test\data\testbar.php" />
-    <Content Include="Content\libs\jquery\test\data\testinit.js" />
-    <Content Include="Content\libs\jquery\test\data\testrunner.js" />
-    <Content Include="Content\libs\jquery\test\data\testsuite.css" />
-    <Content Include="Content\libs\jquery\test\data\text.php" />
-    <Content Include="Content\libs\jquery\test\data\with_fries.xml" />
-    <Content Include="Content\libs\jquery\test\data\with_fries_over_jsonp.php" />
-    <Content Include="Content\libs\jquery\test\delegatetest.html" />
-    <Content Include="Content\libs\jquery\test\hovertest.html" />
-    <Content Include="Content\libs\jquery\test\index.html" />
-    <Content Include="Content\libs\jquery\test\integration\data\gh-1764-fullscreen-iframe.css" />
-    <Content Include="Content\libs\jquery\test\integration\data\gh-1764-fullscreen-iframe.html" />
-    <Content Include="Content\libs\jquery\test\integration\data\gh-1764-fullscreen.js" />
-    <Content Include="Content\libs\jquery\test\integration\gh-1764-fullscreen.html" />
-    <Content Include="Content\libs\jquery\test\integration\gh-2343-ie-radio-click.html" />
-    <Content Include="Content\libs\jquery\test\jquery.js" />
-    <Content Include="Content\libs\jquery\test\localfile.html" />
-    <Content Include="Content\libs\jquery\test\networkerror.html" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\document_missing.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\document_passed.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\document_present_originally.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\iterable_with_native_symbol.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\iterable_with_symbol_polyfill.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\lib\ensure_global_not_created.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\lib\ensure_iterability_es6.js" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\lib\ensure_jquery.js" />
-    <Content Include="Content\libs\jquery\test\promises_aplus_adapters\deferred.js" />
-    <Content Include="Content\libs\jquery\test\promises_aplus_adapters\when.js" />
-    <Content Include="Content\libs\jquery\test\unit\ajax.js" />
-    <Content Include="Content\libs\jquery\test\unit\animation.js" />
-    <Content Include="Content\libs\jquery\test\unit\attributes.js" />
-    <Content Include="Content\libs\jquery\test\unit\basic.js" />
-    <Content Include="Content\libs\jquery\test\unit\callbacks.js" />
-    <Content Include="Content\libs\jquery\test\unit\core.js" />
-    <Content Include="Content\libs\jquery\test\unit\css.js" />
-    <Content Include="Content\libs\jquery\test\unit\data.js" />
-    <Content Include="Content\libs\jquery\test\unit\deferred.js" />
-    <Content Include="Content\libs\jquery\test\unit\deprecated.js" />
-    <Content Include="Content\libs\jquery\test\unit\dimensions.js" />
-    <Content Include="Content\libs\jquery\test\unit\effects.js" />
-    <Content Include="Content\libs\jquery\test\unit\event.js" />
-    <Content Include="Content\libs\jquery\test\unit\exports.js" />
-    <Content Include="Content\libs\jquery\test\unit\manipulation.js" />
-    <Content Include="Content\libs\jquery\test\unit\offset.js" />
-    <Content Include="Content\libs\jquery\test\unit\queue.js" />
-    <Content Include="Content\libs\jquery\test\unit\ready.js" />
-    <Content Include="Content\libs\jquery\test\unit\selector.js" />
-    <Content Include="Content\libs\jquery\test\unit\serialize.js" />
-    <Content Include="Content\libs\jquery\test\unit\support.js" />
-    <Content Include="Content\libs\jquery\test\unit\traversing.js" />
-    <Content Include="Content\libs\jquery\test\unit\tween.js" />
-    <Content Include="Content\libs\jquery\test\unit\wrap.js" />
-    <Content Include="Content\libs\jquery\test\xhtml.php" />
+    <Content Include="Content\libs\slimScroll\examples\allow-page-scroll.html" />
+    <Content Include="Content\libs\slimScroll\examples\chaining.html" />
+    <Content Include="Content\libs\slimScroll\examples\disable-fade-out.html" />
+    <Content Include="Content\libs\slimScroll\examples\dynamic-content.html" />
+    <Content Include="Content\libs\slimScroll\examples\height-width.html" />
+    <Content Include="Content\libs\slimScroll\examples\index.html" />
+    <Content Include="Content\libs\slimScroll\examples\libs\prettify\prettify.css" />
+    <Content Include="Content\libs\slimScroll\examples\libs\prettify\prettify.js" />
+    <Content Include="Content\libs\slimScroll\examples\mouse-wheel.html" />
+    <Content Include="Content\libs\slimScroll\examples\multiple-elements.html" />
+    <Content Include="Content\libs\slimScroll\examples\navigation.html" />
+    <Content Include="Content\libs\slimScroll\examples\nested.html" />
+    <Content Include="Content\libs\slimScroll\examples\programmatic-scrolling.html" />
+    <Content Include="Content\libs\slimScroll\examples\rail.html" />
+    <Content Include="Content\libs\slimScroll\examples\scroll-events.html" />
+    <Content Include="Content\libs\slimScroll\examples\scrollbar.html" />
+    <Content Include="Content\libs\slimScroll\examples\start-position.html" />
+    <Content Include="Content\libs\slimScroll\examples\style.css" />
+    <Content Include="Content\libs\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Content\libs\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\libs\toastr\toastr.css" />
+    <Content Include="Content\libs\toastr\toastr.js" />
+    <Content Include="Content\libs\toastr\toastr.min.css" />
+    <Content Include="Content\libs\toastr\toastr.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="db.config" />
+    <Content Include="SPA\app.js" />
+    <Content Include="SPA\components\home\homeController.js" />
+    <Content Include="SPA\components\home\homeView.html" />
+    <Content Include="SPA\components\product\productAddController.js" />
+    <Content Include="SPA\components\product\productController.js" />
+    <Content Include="SPA\components\product\productEditController.js" />
+    <Content Include="SPA\components\product\productFormView.html" />
+    <Content Include="SPA\components\product\product.module.js" />
+    <Content Include="SPA\components\product\productView.html" />
+    <Content Include="SPA\components\product_category\productCategory.module.js" />
+    <Content Include="SPA\components\product_category\productCategoryAddController.js" />
+    <Content Include="SPA\components\product_category\productCategoryController.js" />
+    <Content Include="SPA\components\product_category\productCategoryEditController.js" />
+    <Content Include="SPA\components\product_category\productCategoryForm.html" />
+    <Content Include="SPA\components\product_category\productCategoryView.html" />
+    <Content Include="SPA\shared\directives\clearInputDirective.js" />
+    <Content Include="SPA\shared\directives\pageDirective.html" />
+    <Content Include="SPA\shared\directives\pageDirective.js" />
+    <Content Include="SPA\shared\filters\statusFilter.js" />
+    <Content Include="SPA\shared\services\apiService.js" />
+    <Content Include="SPA\shared\services\notificationService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -526,7 +506,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="SPA\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -549,6 +528,71 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".bowerrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VShop.Common\VShop.Common.csproj">
+      <Project>{A41EB472-9BBA-4EB1-91C2-0EC0EF75C5CD}</Project>
+      <Name>VShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VShop.Data\VShop.Data.csproj">
+      <Project>{04B7F5FB-2146-4730-BEE7-907E750B4F5F}</Project>
+      <Name>VShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VShop.Mapping\VShop.Mapping.csproj">
+      <Project>{ff1753b3-ee4a-434d-a15a-7a8933723265}</Project>
+      <Name>VShop.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VShop.Model\VShop.Model.csproj">
+      <Project>{BE291CB1-CE16-4E12-8C37-42CE64999AFE}</Project>
+      <Name>VShop.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VShop.Repository\VShop.Repository.csproj">
+      <Project>{DB2E52B1-3C25-4048-A477-3E294A92262D}</Project>
+      <Name>VShop.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VShop.Service\VShop.Service.csproj">
+      <Project>{9E7E195D-B515-4C36-812E-97B64BD7695F}</Project>
+      <Name>VShop.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\libs\angular-ui-router\.bower.json" />
+    <Content Include="Content\libs\angular-ui-router\bower.json" />
+    <Content Include="Content\libs\angular-ui-router\CHANGELOG.md" />
+    <Content Include="Content\libs\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="Content\libs\angular-ui-router\DOCS.md" />
+    <Content Include="Content\libs\angular-ui-router\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\libs\angular-ui-router\LICENSE" />
+    <Content Include="Content\libs\angular-ui-router\migrate\migrate.json" />
+    <Content Include="Content\libs\angular-ui-router\README.md" />
+    <Content Include="Content\libs\angular-ui-router\release\angular-ui-router.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\angular-ui-router.min.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\resolveService.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\resolveService.min.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\stateEvents.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\stateEvents.min.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\ui-router-angularjs.js.map" />
+    <Content Include="Content\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
+    <Content Include="Content\libs\angular-ui-router\tslint.json" />
+    <Content Include="Content\libs\angular-ui-router\yarn.lock" />
+    <Content Include="Content\libs\angular\.bower.json" />
+    <Content Include="Content\libs\angular\angular.min.js.gzip" />
+    <Content Include="Content\libs\angular\angular.min.js.map" />
+    <Content Include="Content\libs\angular\bower.json" />
+    <Content Include="Content\libs\angular\LICENSE.md" />
+    <Content Include="Content\libs\angular\package.json" />
+    <Content Include="Content\libs\angular\README.md" />
+    <Content Include="Content\libs\fastclick\.bower.json" />
+    <Content Include="Content\libs\fastclick\bower.json" />
+    <Content Include="Content\libs\fastclick\LICENSE" />
+    <Content Include="Content\libs\fastclick\README.md" />
+    <Content Include="Content\libs\slimScroll\.bower.json" />
+    <Content Include="Content\libs\slimScroll\bower.json" />
+    <Content Include="Content\libs\slimScroll\package.json" />
+    <Content Include="Content\libs\slimScroll\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\libs\bootstrap\.bower.json" />
@@ -654,65 +698,36 @@
     <Content Include="Content\libs\bootstrap\nuget\MyGet.ps1" />
     <Content Include="Content\libs\bootstrap\package.json" />
     <Content Include="Content\libs\bootstrap\README.md" />
+    <Content Include="Content\libs\jquery\.bower.json" />
+    <Content Include="Content\libs\jquery\bower.json" />
+    <Content Include="Content\libs\jquery\dist\jquery.min.map" />
+    <Content Include="Content\libs\jquery\dist\jquery.slim.min.map" />
+    <Content Include="Content\libs\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Content\libs\jquery\README.md" />
+    <Content Include="Content\libs\jquery\src\.eslintrc.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\libs\jquery\.babelrc" />
-    <Content Include="Content\libs\jquery\.editorconfig" />
-    <Content Include="Content\libs\jquery\.eslintignore" />
-    <Content Include="Content\libs\jquery\.eslintrc-browser.json" />
-    <Content Include="Content\libs\jquery\.eslintrc-node.json" />
-    <Content Include="Content\libs\jquery\.eslintrc.json" />
-    <Content Include="Content\libs\jquery\.github\ISSUE_TEMPLATE.md" />
-    <Content Include="Content\libs\jquery\.github\PULL_REQUEST_TEMPLATE.md" />
-    <Content Include="Content\libs\jquery\.mailmap" />
-    <Content Include="Content\libs\jquery\.npmignore" />
-    <Content Include="Content\libs\jquery\.npmrc" />
-    <Content Include="Content\libs\jquery\.travis.yml" />
-    <Content Include="Content\libs\jquery\CONTRIBUTING.md" />
-    <Content Include="Content\libs\jquery\dist\.eslintrc.json" />
-    <Content Include="Content\libs\jquery\package.json" />
-    <Content Include="Content\libs\jquery\test\.eslintrc.json" />
-    <Content Include="Content\libs\jquery\test\data\support\csp.log" />
-    <Content Include="Content\libs\jquery\test\node_smoke_tests\.eslintrc.json" />
-    <Content Include="Content\libs\jquery\test\promises_aplus_adapters\.eslintrc.json" />
+    <Content Include="SPA\shared\modules\vshop.common.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\libs\angular\.bower.json" />
-    <Content Include="Content\libs\angular\angular.min.js.gzip" />
-    <Content Include="Content\libs\angular\angular.min.js.map" />
-    <Content Include="Content\libs\angular\bower.json" />
-    <Content Include="Content\libs\angular\LICENSE.md" />
-    <Content Include="Content\libs\angular\package.json" />
-    <Content Include="Content\libs\angular\README.md" />
+    <Content Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VShop.Common\VShop.Common.csproj">
-      <Project>{A41EB472-9BBA-4EB1-91C2-0EC0EF75C5CD}</Project>
-      <Name>VShop.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VShop.Data\VShop.Data.csproj">
-      <Project>{04B7F5FB-2146-4730-BEE7-907E750B4F5F}</Project>
-      <Name>VShop.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VShop.Mapping\VShop.Mapping.csproj">
-      <Project>{ff1753b3-ee4a-434d-a15a-7a8933723265}</Project>
-      <Name>VShop.Mapping</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VShop.Model\VShop.Model.csproj">
-      <Project>{BE291CB1-CE16-4E12-8C37-42CE64999AFE}</Project>
-      <Name>VShop.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VShop.Repository\VShop.Repository.csproj">
-      <Project>{DB2E52B1-3C25-4048-A477-3E294A92262D}</Project>
-      <Name>VShop.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VShop.Service\VShop.Service.csproj">
-      <Project>{9E7E195D-B515-4C36-812E-97B64BD7695F}</Project>
-      <Name>VShop.Service</Name>
-    </ProjectReference>
+    <Content Include="Content\libs\angular-route\.bower.json" />
+    <Content Include="Content\libs\angular-route\angular-route.min.js.map" />
+    <Content Include="Content\libs\angular-route\bower.json" />
+    <Content Include="Content\libs\angular-route\LICENSE.md" />
+    <Content Include="Content\libs\angular-route\package.json" />
+    <Content Include="Content\libs\angular-route\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Content\libs\toastr\.bower.json" />
+    <Content Include="Content\libs\toastr\bower.json" />
+    <Content Include="Content\libs\toastr\LICENSE" />
+    <Content Include="Content\libs\toastr\README.md" />
+    <Content Include="Content\libs\toastr\toastr.js.map" />
+    <Content Include="Content\libs\toastr\toastr.less" />
+    <Content Include="Content\libs\toastr\toastr.scss" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

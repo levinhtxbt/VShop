@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VShop.Model;
 using VShop.Repository;
@@ -40,14 +41,28 @@ namespace VShop.Service
             return _productRepository.GetAll();
         }
 
-        public IEnumerable<Product> GetPaging(int pageIndex, int pageSize, out int totalCount)
+        public IEnumerable<Product> GetByPaging(string keyword, int pageIndex, int pageSize, out int totalCount, string[] include = null)
         {
-            var listProduct = _productRepository.GetAll();
+            var listProduct = _productRepository.GetAll(include);
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                listProduct = listProduct.Where(x => x.Name.Contains(keyword));
+            }
+
             totalCount = listProduct.Count();
             listProduct = listProduct.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+
             return listProduct;
         }
 
-
+        public Product GetById(int id, string[] include = null)
+        {
+            if (include != null)
+            {
+                return _productRepository.GetMulti(x => x.ID == id, include).FirstOrDefault();
+            }
+            return _productRepository.GetSingleById(id);
+        }
     }
 }

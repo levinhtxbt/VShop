@@ -1,0 +1,98 @@
+﻿<section class="content-header">
+    <h1>
+        Thêm mới loại sản phẩm
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Simple</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Thông tin</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal">
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">ID</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="productCategory.ID" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="productCategory.Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Alias</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="productCategory.Alias">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" rows="4" ng-model="productCategory.Description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Image</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="productCategory.Image">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Display order</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="productCategory.DisplayOrder">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Meta description</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="productCategory.MetaDescription">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Meta keyword</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="productCategory.MetaKeyword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="productCategory.HotFlag" ng-checked="productCategory.HotFlag"> Hot
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="productCategory.Status" ng-checked="productCategory.Status"> Status
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Hủy</button>
+                <button type="button" class="btn btn-info pull-right" ng-click="submit()">Thêm mới</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</section>

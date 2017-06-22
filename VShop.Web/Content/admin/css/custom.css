@@ -1,0 +1,11 @@
+﻿.clear-input {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    z-index: 2;
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
