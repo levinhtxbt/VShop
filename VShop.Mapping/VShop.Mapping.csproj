@@ -47,7 +47,8 @@
     <Compile Include="AutoMapperProfile\ModelToViewModelProfile.cs" />
     <Compile Include="AutoMapperProfile\RequestToModelProfile.cs" />
     <Compile Include="AutoMapperProfile\ViewModelToModelProfile.cs" />
-    <Compile Include="Extensions\ProductCategoryExtension.cs" />
+    <Compile Include="Extensions\BrandExtensions.cs" />
+    <Compile Include="Extensions\ProductCategoryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

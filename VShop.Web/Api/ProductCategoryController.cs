@@ -104,8 +104,6 @@ namespace VShop.Web.Api
             {
                 return BadRequest(ModelState);
             }
-            var dateNow = DateTime.Now;
-
             try
             {
                 var productCategory = _productCategoryService.GetById(model.ID);

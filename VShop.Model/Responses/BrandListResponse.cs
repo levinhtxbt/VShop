@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VShop.Model
 {
-    public class BrandDetailResponse
+    public class BrandListResponse
     {
         public int ID { get; set; }
 

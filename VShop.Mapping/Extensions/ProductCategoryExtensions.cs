@@ -7,7 +7,7 @@ using VShop.Model;
 
 namespace VShop.Mapping.Extensions
 {
-    public static class ProductCategoryExtension
+    public static class ProductCategoryExtensions
     {
         public static void UpdateProductCategory(this ProductCategory model, CreateProductCategoryRequest request)
         {

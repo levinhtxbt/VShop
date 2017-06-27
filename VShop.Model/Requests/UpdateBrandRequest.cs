@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace VShop.Model
 {
-    public class BrandDetailResponse
+    public class UpdateBrandRequest
     {
+        [Required]
         public int ID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Alias { get; set; }
 
         public string Logo { get; set; }
@@ -22,12 +22,10 @@ namespace VShop.Model
 
         public string MetaKeyword { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        [Required]
+        public DateTime UpdateDate { get; set; }
 
-        public string CreateBy { get; set; }
-
-        public DateTime? UpdateDate { get; set; }
-
+        [Required]
         public string UpdateBy { get; set; }
 
         public bool Status { get; set; }
