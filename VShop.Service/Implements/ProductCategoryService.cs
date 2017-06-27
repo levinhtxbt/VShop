@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VShop.Model;
 using VShop.Repository;
@@ -28,10 +29,29 @@ namespace VShop.Service.Implements
             return _uow.Commit() ? result : null;
         }
 
+        public ProductCategory Delete(int id)
+        {
+            var deleteTarget = _productCategoryRepository.GetSingleById(id);
+            if (deleteTarget != null)
+            {
+                return Delete(deleteTarget);
+            }
+            return null;
+        }
+
         public ProductCategory Delete(ProductCategory productCategory)
         {
             var result = _productCategoryRepository.Delete(productCategory);
             return _uow.Commit() ? result : null;
+        }
+        public int DeleteMultiple(List<int> ids)
+        {
+            if (ids.Count != 0)
+            {
+                _productCategoryRepository.DeleteMulti(x => ids.Contains(x.ID));
+                return _uow.SaveChanges();
+            }
+            return -1;
         }
 
         public IEnumerable<ProductCategory> GetAll()
@@ -62,5 +82,6 @@ namespace VShop.Service.Implements
 
             return listProduct;
         }
+
     }
 }

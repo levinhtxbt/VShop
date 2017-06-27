@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace VShop.Model
 {
-    public class ProductCategoryDetailResponse
+    public class UpdateProductCategoryRequest
     {
+        [Required]
         public int ID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Alias { get; set; }
 
         public string Description { get; set; }
@@ -28,15 +28,13 @@ namespace VShop.Model
 
         public string MetaKeyword { get; set; }
 
-        public DateTime CreateDate { get; set; }
-        public string CreateBy { get; set; }
-
+        [Required]
         public DateTime? UpdateDate { get; set; }
 
+        [Required]
         public string UpdateBy { get; set; }
 
+        [Required]
         public bool Status { get; set; }
-
-        public virtual ProductCategoryDetailResponse Parent { get; set; }
     }
 }

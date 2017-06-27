@@ -1,7 +1,7 @@
-<section class="content-header">
+﻿<section class="content-header">
     <h1>
-        Loại sản phẩm
-        <small>danh sách danh mục sản phẩm</small>
+        Nhà sản xuất / Thương hiệu
+        <small>danh sách các nhà sản xuất / thương hiệu</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,7 +16,7 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title"></h3>
-                    <button class="btn btn-sm btn-success" ui-sref="productCategoryAdd"> <i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button>
+                    <button class="btn btn-sm btn-success" ui-sref="brandAdd"> <i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button>
                     <button class="btn btn-sm btn-danger" ng-click="deleteMultiple()" id="btnDeleteMultiple" disabled> <i class="fa fa-trash" aria-hidden="true"></i>Xóa</button>
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 250px;">
@@ -42,7 +42,7 @@
                             <th width="7%">Trạng thái</th>
                             <th width="13%">Thao tác</th>
                         </tr>
-                        <tr ng-repeat="item in productCategories">
+                        <tr ng-repeat="item in brands">
                             <td><input type="checkbox" ng-model="item.checked" /></td>
                             <td>{{item.ID}}</td>
                             <td>{{item.Name}}</td>
@@ -67,7 +67,7 @@
                 <!-- /.box-body -->
 
                 <div class="box-footer">
-                    <page-directive page="{{page}}" custom-path="{{customPath}}" page-count="{{pageCount}}" total-count="{{totalCount}}" search-func="getAllProductCategory(page)"></page-directive>
+                    <page-directive page="{{page}}" custom-path="{{customPath}}" page-count="{{pageCount}}" total-count="{{totalCount}}" search-func="getAllBrand(page)"></page-directive>
                 </div>
             </div>
             <!-- /.box -->

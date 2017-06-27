@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using VShop.Common;
 using VShop.Common.Helpers;
 using VShop.Mapping.Extensions;
@@ -13,6 +15,7 @@ namespace VShop.Web.Api
     [RoutePrefix("api/product-category")]
     public class ProductCategoryController : BaseApiController
     {
+        #region Property / Contructor
         private readonly IProductCategoryService _productCategoryService;
 
         public ProductCategoryController(ILogService logErrorService
@@ -20,17 +23,32 @@ namespace VShop.Web.Api
         {
             _productCategoryService = productCategoryService;
         }
+        #endregion
 
         [HttpGet]
         [Route("getall")]
         public IHttpActionResult GetAll()
         {
             var productCategories = _productCategoryService.GetAll();
-            var productCategoryVMs = Mapper.Map<IEnumerable<ProductCategoryViewModel>>(productCategories);
-            return Ok(productCategoryVMs);
+            //only get Id and Name
+            return Ok(productCategories.Select(x => new { ID = x.ID, Name = x.Name, DisplayOrder = x.DisplayOrder }));
         }
 
         [HttpGet]
+        [Route("{id:int}")]
+        public IHttpActionResult GetById(int id)
+        {
+            var productCategory = _productCategoryService.GetById(id);
+            if (productCategory != null)
+            {
+                var productCategoryVm = Mapper.Map<ProductCategoryDetailResponse>(productCategory);
+                return Ok(productCategoryVm);
+            }
+            return BadRequest();
+        }
+
+        [HttpGet]
+        [Route("")]
         public IHttpActionResult GetAll(string keyword = null, int? pageIndex = null, int? pageSize = null)
         {
             var _totalCount = 0;
@@ -52,8 +70,14 @@ namespace VShop.Web.Api
         }
 
         [HttpPost]
+        [Route("")]
         public IHttpActionResult Create(CreateProductCategoryRequest model)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 var newProductCategory = new ProductCategory();
@@ -69,6 +93,64 @@ namespace VShop.Web.Api
                 Log.Website(ex);
             }
 
+            return BadRequest();
+        }
+
+        [HttpPut]
+        [Route("")]
+        public IHttpActionResult Update(UpdateProductCategoryRequest model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var dateNow = DateTime.Now;
+
+            try
+            {
+                var productCategory = _productCategoryService.GetById(model.ID);
+                if (productCategory != null)
+                {
+                    productCategory.UpdateProductCategory(model);
+                    var result = _productCategoryService.Update(productCategory);
+                    if (result != null)
+                    {
+                        var productCategoryVm = Mapper.Map<ProductCategoryDetailResponse>(result);
+
+                        return Ok(productCategoryVm);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Website(ex);
+            }
+
+            return BadRequest();
+        }
+
+        [HttpDelete]
+        [Route("")]
+        public IHttpActionResult Delete(int id)
+        {
+            var result = _productCategoryService.Delete(id);
+            if (result != null)
+            {
+                return Ok(new { status = true });
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete]
+        [Route("delete-multiple")]
+        public IHttpActionResult DeleteMulti(string ids)
+        {
+            var listIds = new JavaScriptSerializer().Deserialize<List<int>>(ids);
+            var result = _productCategoryService.DeleteMultiple(listIds);
+            if (result != -1)
+            {
+                return Ok(new { status = true, result = result });
+            }
             return BadRequest();
         }
     }

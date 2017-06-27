@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System;
 using VShop.Model;
 
 namespace VShop.Mapping.AutoMapperProfile
@@ -9,9 +10,12 @@ namespace VShop.Mapping.AutoMapperProfile
         {
             //Product category
             CreateMap<ProductCategory, ProductCategoryListResponse>()
+               // .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => DateTime.SpecifyKind(src.CreateDate, DateTimeKind.Utc)))
                 .ForMember(dest => dest.ProductCount, opt => opt.MapFrom(src => src.Products.Count));
-            //.ForMember(dest => dest.ParentName, opt => opt.MapFrom(src => src.Parent == null ? string.Empty : src.Parent.Name));
+
             CreateMap<ProductCategory, ProductCategoryDetailResponse>();
+               //  .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => DateTime.SpecifyKind(src.CreateDate, DateTimeKind.Utc)))
+                // .ForMember(dest => dest.UpdateDate, opt => opt.ResolveUsing(src => src.UpdateDate.HasValue ? DateTime.SpecifyKind(src.UpdateDate.Value, DateTimeKind.Utc) : src.UpdateDate));
             //CreateMap<ProductCategory, ProductCategoryDropdownListResponse>();
 
             //Brand

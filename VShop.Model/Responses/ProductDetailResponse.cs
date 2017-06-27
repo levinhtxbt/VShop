@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace VShop.Model
 {
@@ -31,6 +32,20 @@ namespace VShop.Model
         public int ViewCount { get; set; }
 
         public string Tags { get; set; }
+
+        public string MetaDescription { get; set; }
+
+        public string MetaKeyword { get; set; }
+
+        public DateTime CreateDate { get; set; }
+        public string CreateBy { get; set; }
+
+        public DateTime? UpdateDate { get; set; }
+
+        public string UpdateBy { get; set; }
+
+        public bool Status { get; set; }
+
         public ProductCategoryDetailResponse ProductCategory { get; set; }
 
         public BrandDetailResponse Brand { get; set; }

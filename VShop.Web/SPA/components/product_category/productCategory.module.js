@@ -17,7 +17,7 @@
             templateUrl: '/spa/components/product_category/productCategoryForm.html',
             controller: 'productCategoryAddController'
         }).state('productCategoryEdit', {
-            url: '/product-category/edit',
+            url: '/product-category/edit/:id',
             templateUrl: '/spa/components/product_category/productCategoryForm.html',
             controller: 'productCategoryEditController'
         });

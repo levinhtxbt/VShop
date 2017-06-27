@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('vshop', ['vshop.product', 'vshop.productCategory', 'vshop.common']).config(config);
+    angular.module('vshop', ['vshop.product', 'vshop.productCategory','vshop.brand', 'vshop.common']).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
 

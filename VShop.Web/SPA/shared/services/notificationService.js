@@ -38,7 +38,7 @@
             toastr.warning(message);
         }
 
-        function displayError(error) {
+        function displayError(message) {
             toastr.error(message);
         }
 

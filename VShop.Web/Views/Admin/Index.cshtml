@@ -239,7 +239,7 @@
                         <ul class="treeview-menu">
                             <li><a ui-sref="product"><i class="fa fa-circle-o"></i>Sản phẩm</a></li>
                             <li><a ui-sref="productCategory"><i class="fa fa-circle-o"></i>Loại</a></li>
-                            <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i>Nhà sản xuất</a></li>
+                            <li><a ui-sref="brand"><i class="fa fa-circle-o"></i>Nhà sản xuất / Thương hiệu</a></li>
                             <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
                             <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
                             <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
@@ -328,7 +328,7 @@
                             </span>
                         </a>
                     </li>
-                    <li class="treeview active">
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i> <span>Examples</span>
                             <span class="pull-right-container">
@@ -343,7 +343,7 @@
                             <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
                             <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
                             <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+                            <li><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
                             <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
                         </ul>
                     </li>
@@ -588,9 +588,15 @@
     <script src="~/Content/admin/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/admin/js/demo.js"></script>
+    <!--Moment-->
+    <script src="~/Content/libs/moment/moment.js"></script>
+    <!--Bootbox-->
+    <script src="~/Content/libs/bootbox/bootbox.js"></script>
     <!-- Angular -->
     <script src="~/Content/libs/angular/angular.js"></script>
     <script src="~/Content/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/Content/libs/angular-moment/angular-moment.js"></script>
+    <script src="~/Content/libs/ngBootbox/dist/ngBootbox.min.js"></script>
     <!--Toastr-->
     <script src="~/Content/libs/toastr/toastr.js"></script>
     <!-- App -->
@@ -600,6 +606,7 @@
     <!--Service-->
     <script src="~/SPA/shared/services/apiService.js"></script>
     <script src="~/SPA/shared/services/notificationService.js"></script>
+    <script src="~/SPA/shared/services/dateUtils.js"></script>
     <!--Directive-->
     <script src="~/SPA/shared/directives/pageDirective.js"></script>
     <script src="~/SPA/shared/directives/clearInputDirective.js"></script>
@@ -617,5 +624,11 @@
     <script src="~/SPA/components/product_category/productCategoryController.js"></script>
     <script src="~/SPA/components/product_category/productCategoryAddController.js"></script>
     <script src="~/SPA/components/product_category/productCategoryEditController.js"></script>
+    <!--Brand-->
+    <script src="~/SPA/components/brand/brand.module.js"></script>
+    <script src="~/SPA/components/brand/brandController.js"></script>
+    <script src="~/SPA/components/brand/brandAddController.js"></script>
+    <script src="~/SPA/components/brand/brandEditController.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,6 @@
-﻿namespace VShop.Model
+﻿using System;
+
+namespace VShop.Model
 {
     public class ProductCategoryListResponse
     {
@@ -16,8 +18,15 @@
 
         public string Image { get; set; }
 
+        public bool Status { get; set; }
+
         public bool HotFlag { get; set; }
 
         public int ProductCount { get; set; }
+
+        public DateTime CreateDate { get; set; }
+
+        public string CreateBy { get; set; }
+
     }
 }

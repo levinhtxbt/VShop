@@ -82,8 +82,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\CreateProductCategoryRequest.cs" />
     <Compile Include="Requests\ProductDetailRequest.cs" />
+    <Compile Include="Requests\UpdateProductCategoryRequest.cs" />
     <Compile Include="Responses\BrandDetailResponse.cs" />
     <Compile Include="Responses\ProductCategoryDetailResponse.cs" />
+    <Compile Include="Responses\ProductCategoryDropdownListResponse.cs" />
     <Compile Include="Responses\ProductCategoryListResponse.cs" />
     <Compile Include="Responses\ProductDetailResponse.cs" />
     <Compile Include="Responses\ProductListResponse.cs" />
