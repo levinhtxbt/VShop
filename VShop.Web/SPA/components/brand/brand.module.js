@@ -15,7 +15,7 @@
             templateUrl: '/spa/components/brand/brandFormView.html',
             controller: 'brandAddController'
         }).state('brandEdit', {
-            url: '/brand/edit',
+            url: '/brand/edit/:id',
             templateUrl: '/spa/components/brand/brandFormView.html',
             controller: 'brandEditController'
         })

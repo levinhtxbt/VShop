@@ -17,7 +17,7 @@
                 <div class="box-header">
                     <h3 class="box-title"></h3>
                     <button class="btn btn-sm btn-success" ui-sref="brandAdd"> <i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button>
-                    <button class="btn btn-sm btn-danger" ng-click="deleteMultiple()" id="btnDeleteMultiple" disabled> <i class="fa fa-trash" aria-hidden="true"></i>Xóa</button>
+                    <button class="btn btn-sm btn-danger" ng-click="deleteMultiple()" id="btnDeleteMultiple" disabled> <i class="fa fa-trash" aria-hidden="true"></i> Xóa</button>
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 250px;">
                             <input type="text" class="form-control" placeholder="Search..." ng-model="keyword" clear-input callback-func="search()">
@@ -57,8 +57,8 @@
 
                             </td>
                             <td>
-                                <a class="btn btn-warning" ui-sref="productCategoryEdit({id:item.ID})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa</a>
-                                <a class="btn btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a>
+                                <a class="btn btn-warning" ui-sref="brandEdit({id:item.ID})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa</a>
+                                <a class="btn btn-danger" ng-click="deleteBrand(item.ID)"><i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a>
                             </td>
                         </tr>
 
