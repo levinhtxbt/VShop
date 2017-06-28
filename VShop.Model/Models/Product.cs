@@ -22,7 +22,7 @@ namespace VShop.Model
 
         public int CategoryID { get; set; }
 
-        public int BrandID { get; set; }
+        public int? BrandID { get; set; }
 
         [MaxLength(500)]
         public string Image { get; set; }

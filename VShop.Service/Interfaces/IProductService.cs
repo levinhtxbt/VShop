@@ -11,6 +11,10 @@ namespace VShop.Service
 
         Product Delete(Product product);
 
+        Product DeleteById(int productId);
+
+        int DeleteMultiple(List<int> ids);
+
         IEnumerable<Product> GetAll();
 
         Product GetById(int id, string[] include = null);

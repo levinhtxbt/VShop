@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using VShop.Common.Helpers;
+using VShop.Mapping.Extensions;
 using VShop.Model;
 using VShop.Service;
 
@@ -24,11 +26,12 @@ namespace VShop.Web.Api
         }
 
         [HttpGet]
+        [Route("")]
         public IHttpActionResult GetAll(string keyword = null, int? pageIndex = null, int? pageSize = null)
         {
             var _totalCount = 0;
             var _pageSize = pageSize ?? WebConfigHelper.GetPageSize();
-            var _pageIndex = pageIndex ?? 1;
+            var _pageIndex = pageIndex ?? 0;
             var listProduct = _productService.GetByPaging(keyword, _pageIndex, _pageSize, out _totalCount, new string[] { "ProductCategory", "Brand" });
             var _totalPage = (int)Math.Ceiling((decimal)_totalCount / _pageSize);
             var listProductResponse = Mapper.Map<IEnumerable<ProductListResponse>>(listProduct);
@@ -54,22 +57,72 @@ namespace VShop.Web.Api
         }
 
         [HttpPost]
-        public IHttpActionResult Create(ProductDetailRequest model)
+        [Route("")]
+        public IHttpActionResult Create(CreateProductRequest model)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var product = new Product();
+            product.UpdateProduct(model);
+
+            var result = _productService.Add(product);
+            if (result != null)
+            {
+                return Ok(new { status = true });
+            }
+
+            return BadRequest();
         }
 
         [HttpPut]
-        public IHttpActionResult Update(ProductDetailRequest model)
+        [Route("")]
+        public IHttpActionResult Update(UpdateProductRequest model)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var product = _productService.GetById(model.ID);
+            if (product != null)
+            {
+                product.UpdateProduct(model);
+                var result = _productService.Update(product);
+                if (result != null)
+                {
+                    return Ok(new { status = true });
+                }
+            }
+            return BadRequest();
         }
 
         [HttpDelete]
         [Route("{id:int}")]
-        public IHttpActionResult Delete()
+        public IHttpActionResult Delete(int id)
         {
-            return Ok();
+            var result = _productService.DeleteById(id);
+            if (result != null)
+            {
+                return Ok(new { status = true });
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete]
+        [Route("delete-multiple")]
+        public IHttpActionResult Delete(string ids)
+        {
+            var listIds = new JavaScriptSerializer().Deserialize<List<int>>(ids);
+            var result = _productService.DeleteMultiple(listIds);
+            if (result != -1)
+            {
+                return Ok(new { status = true, data = result });
+            }
+            return BadRequest();
+
         }
 
     }

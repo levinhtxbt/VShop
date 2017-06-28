@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using VShop.Model;
 using VShop.Repository;
@@ -34,6 +33,29 @@ namespace VShop.Service
         {
             var result = _productRepository.Delete(product);
             return _uow.Commit() ? result : null;
+        }
+
+        public Product DeleteById(int id)
+        {
+            var product = GetById(id);
+            if (product != null)
+            {
+                return Delete(product);
+            }
+            return null;
+        }
+
+        public int DeleteMultiple(List<int> ids)
+        {
+            if (ids.Count != 0)
+            {
+                foreach (var id in ids)
+                {
+                    _productRepository.Delete(id);
+                }
+                return _uow.SaveChanges();
+            }
+            return -1;
         }
 
         public IEnumerable<Product> GetAll()

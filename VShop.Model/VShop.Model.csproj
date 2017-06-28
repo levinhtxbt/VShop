@@ -82,9 +82,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\CreateBrandRequest.cs" />
     <Compile Include="Requests\CreateProductCategoryRequest.cs" />
-    <Compile Include="Requests\ProductDetailRequest.cs" />
+    <Compile Include="Requests\CreateProductRequest.cs" />
     <Compile Include="Requests\UpdateBrandRequest.cs" />
     <Compile Include="Requests\UpdateProductCategoryRequest.cs" />
+    <Compile Include="Requests\UpdateProductRequest.cs" />
     <Compile Include="Responses\BrandDetailResponse.cs" />
     <Compile Include="Responses\BrandListResponse.cs" />
     <Compile Include="Responses\ProductCategoryDetailResponse.cs" />

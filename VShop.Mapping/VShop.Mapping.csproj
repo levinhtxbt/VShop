@@ -49,6 +49,7 @@
     <Compile Include="AutoMapperProfile\ViewModelToModelProfile.cs" />
     <Compile Include="Extensions\BrandExtensions.cs" />
     <Compile Include="Extensions\ProductCategoryExtensions.cs" />
+    <Compile Include="Extensions\ProductExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,15 +1,20 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace VShop.Model
 {
-    public class ProductDetailResponse
+    public class UpdateProductRequest
     {
+        [Required]
         public int ID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Alias { get; set; }
 
+        [Required]
         public int CategoryID { get; set; }
 
         public int? BrandID { get; set; }
@@ -32,25 +37,19 @@ namespace VShop.Model
 
         public bool HotFlag { get; set; }
 
-        public int ViewCount { get; set; }
-
         public string Tags { get; set; }
 
         public string MetaDescription { get; set; }
 
         public string MetaKeyword { get; set; }
 
-        public DateTime CreateDate { get; set; }
-        public string CreateBy { get; set; }
-
+        [Required]
         public DateTime? UpdateDate { get; set; }
 
+        [Required]
         public string UpdateBy { get; set; }
 
+        [Required]
         public bool Status { get; set; }
-
-        public ProductCategoryDetailResponse ProductCategory { get; set; }
-
-        public BrandDetailResponse Brand { get; set; }
     }
 }

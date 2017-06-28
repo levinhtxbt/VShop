@@ -34,9 +34,5 @@ namespace VShop.Model
 
         public virtual ICollection<Product> Products { get; set; }
 
-        public void UpdateModel()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
