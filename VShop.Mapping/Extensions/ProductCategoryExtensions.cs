@@ -25,6 +25,7 @@ namespace VShop.Mapping.Extensions
             model.MetaDescription = request.MetaDescription;
             model.MetaKeyword     = request.MetaKeyword;
         }
+
         public static void UpdateProductCategory(this ProductCategory model, UpdateProductCategoryRequest request)
         {
             model.ID              = request.ID;

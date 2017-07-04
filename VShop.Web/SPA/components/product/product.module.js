@@ -12,12 +12,12 @@
             url: '/product',
             templateUrl: '/SPA/components/product/productView.html',
             controller: "productController"
-        }).state('product_add', {
+        }).state('productAdd', {
             url: '/product/add',
             templateUrl: '/SPA/components/product/productFormView.html',
             controller: "productAddController"
-        }).state('product_edit', {
-            url: '/product/edit',
+        }).state('productEdit', {
+            url: '/product/edit/:id',
             templateUrl: '/SPA/components/product/productFormView.html',
             controller: "productEditController"
         });

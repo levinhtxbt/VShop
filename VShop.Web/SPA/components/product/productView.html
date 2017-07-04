@@ -1,1 +1,78 @@
-﻿this is product view
+﻿<section class="content-header">
+    <h1>
+        Sản phẩm
+        <small>danh sách các sản phẩm</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Simple</li>
+    </ol>
+</section>
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+                    <button class="btn btn-sm btn-success" ui-sref="productAdd"> <i class="fa fa-plus" aria-hidden="true"></i> Thêm mới </button>
+                    <button class="btn btn-sm btn-danger" ng-click="deleteMultiple()" id="btnDeleteMultiple" disabled> <i class="fa fa-trash" aria-hidden="true"></i> Xóa</button>
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 250px;">
+                            <input type="text" class="form-control" placeholder="Search..." ng-model="keyword" clear-input callback-func="search()">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary" ng-click="search()">Search</button>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th width="5%"><input type="checkbox" id="cbxCheckAll" ng-click="checkAll()"/></th>
+                            <th width="5%">ID</th>
+                            <th width="15%">Tên</th>
+                            <th width="15%">Loại</th>
+                            <th width="14%">Nhãn hiệu</th>
+                            <th width="10%">Giá</th>
+                            <th width="10%">Bảo hành</th>
+                            <th width="10%">Lượt xem</th>
+                            <th width="6%">Trạng thái</th>
+                            <th width="10%">Thao tác</th>
+                        </tr>
+                        <tr ng-repeat="item in products">
+                            <td><input type="checkbox" ng-model="item.checked" /></td>
+                            <td>{{item.ID}}</td>
+                            <td>{{item.Name}}</td>
+                            <td>{{item.ProductCategoryName}}</td>
+                            <td>{{item.BrandName}}</td>
+                            <td>{{item.Price}}</td>
+                            <td>{{item.Warranty}}</td>
+                            <td>{{item.ViewCount}}</td>
+                            <td>
+                                <span ng-class="{'label label-success': item.Status == true, 'label label-danger':item.Status == false}">
+                                    {{item.Status | statusFilter}}
+                                </span>
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" ui-sref="productEdit({id:item.ID})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa</a>
+                                <a class="btn btn-sm btn-danger" ng-click="deleteProduct(item.ID)"><i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <page-directive page="{{page}}" custom-path="{{customPath}}" page-count="{{pageCount}}" total-count="{{totalCount}}" search-func="getAllProduct(page)"></page-directive>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>

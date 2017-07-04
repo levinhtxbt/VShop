@@ -15,7 +15,7 @@ namespace VShop.Service
             _brandRepository = brandRepository;
             _uow = uow;
         }
-
+         
         public Brand Add(Brand brand)
         {
             var result = _brandRepository.Add(brand);

@@ -26,6 +26,8 @@
 
         public bool HotFlag { get; set; }
 
+        public bool Status { get; set; }
+
         public int ViewCount { get; set; }
 
         public string Tags { get; set; }

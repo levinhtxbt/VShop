@@ -100,7 +100,7 @@ namespace VShop.Web.Api
         }
 
         [HttpDelete]
-        [Route("{id:int}")]
+        [Route("")]
         public IHttpActionResult Delete(int id)
         {
             var result = _productService.DeleteById(id);

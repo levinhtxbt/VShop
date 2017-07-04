@@ -6,11 +6,17 @@ using System.Web.Mvc;
 
 namespace VShop.Web.Controllers
 {
+
     public class HomeController : Controller
     {
-        // GET: Home
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult CKFinder()
+        {
+            ViewBag.Message = "Welcome to CKFinder!";
             return View();
         }
     }
