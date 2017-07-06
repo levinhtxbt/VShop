@@ -3,19 +3,17 @@
 
     app.controller('productAddController', productAddController);
 
-    productAddController.$inject = ['$scope', '$state', 'apiService', 'notificationService', 'dateUtils'];
+    productAddController.$inject = ['$scope', '$state', 'apiService', 'notificationService', 'dateUtils', 'uploadService', 'commonService'];
 
-    function productAddController($scope, $state, apiService, notificationService, dateUtils) {
+    function productAddController($scope, $state, apiService, notificationService, dateUtils, uploadService, commonService) {
         $scope.product = {
             CreateDate: moment.utc(),
             CreateBy: 'Admin',
             Status: true
         };
-
         $scope.btnSubmitTitle = 'Thêm mới';
         $scope.productCategories = [];
         $scope.brands = [];
-
         $scope.cancel = cancel;
         $scope.submit = submit;
         $scope.getProductCategories = getProductCategories;
@@ -26,28 +24,17 @@
             //uiColor: '#000000'
         };
         $scope.uploadImagePopup = uploadImagePopup;
+        $scope.getSeoTitle = getSeoTitle;
+
 
         function uploadImagePopup() {
-
-            CKFinder.popup({
-                chooseFiles: true,
-                width: 800,
-                height: 600,
-                onInit: function (finder) {
-                    finder.on('files:choose', function (evt) {
-                        var file = evt.data.files.first();
-                        //var output = document.getElementById(elementId);
-                        //output.value = file.getUrl();
-                        console.log(evt);
-                    });
-
-                    finder.on('file:choose:resizedImage', function (evt) {
-                        //var output = document.getElementById(elementId);
-                        //output.value = evt.data.resizedUrl;
-                        console.log(evt);
-                    });
-                }
+            uploadService.uploadImagePopup(function (file) {
+                $scope.product.Image = file;
             });
+        }
+
+        function getSeoTitle() {
+            $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
 
         function getProductCategories() {

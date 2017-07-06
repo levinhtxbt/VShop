@@ -52,6 +52,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\VShop.Common\VShop.Common.csproj">
+      <Project>{A41EB472-9BBA-4EB1-91C2-0EC0EF75C5CD}</Project>
+      <Name>VShop.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VShop.Model\VShop.Model.csproj">
       <Project>{BE291CB1-CE16-4E12-8C37-42CE64999AFE}</Project>
       <Name>VShop.Model</Name>

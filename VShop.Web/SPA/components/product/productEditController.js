@@ -3,9 +3,9 @@
 
     app.controller('productEditController', productEditController);
 
-    productEditController.$inject = ['$scope', '$state', '$stateParams', 'apiService', 'notificationService', 'dateUtils'];
+    productEditController.$inject = ['$scope', '$state', '$stateParams', 'apiService', 'notificationService', 'dateUtils', 'uploadService', 'commonService'];
 
-    function productEditController($scope, $state, $stateParams, apiService, notificationService, dateUtils) {
+    function productEditController($scope, $state, $stateParams, apiService, notificationService, dateUtils, uploadService, commonService) {
         $scope.btnSubmitTitle = "Cập nhật";
         $scope.product = [];
         $scope.productCategories = [];
@@ -19,6 +19,19 @@
             language: 'en',
             //uiColor: '#000000'
         };
+        $scope.uploadImagePopup = uploadImagePopup;
+        $scope.getSeoTitle = getSeoTitle;
+
+        function uploadImagePopup() {
+            uploadService.uploadImagePopup(function (file) {
+                $scope.product.Image = file;
+            });
+
+        }
+
+        function getSeoTitle() {
+            $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
+        }
 
         function getProductCategories() {
             apiService.get('api/product-category/getall', null, function (success) {

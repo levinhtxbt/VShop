@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using VShop.Common.Constants;
+using VShop.Common.Helpers;
 using VShop.Model;
 using VShop.Repository;
 
@@ -8,25 +10,86 @@ namespace VShop.Service
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
+        private readonly IProductTagRepository _productTagRepository;
+        private readonly ITagRepository _tagRepository;
         private readonly IUnitOfWork _uow;
 
         public ProductService(IProductRepository productRepository
+            , IProductTagRepository productTagRepository
+            , ITagRepository tagRepository
             , IUnitOfWork uow)
         {
             _productRepository = productRepository;
+            _productTagRepository = productTagRepository;
+            _tagRepository = tagRepository;
             _uow = uow;
         }
 
         public Product Add(Product product)
         {
-            var result = _productRepository.Add(product);
-            return _uow.Commit() ? result : null;
+            var productResult = _productRepository.Add(product);
+            var saveResult = _uow.Commit();
+            if (saveResult)
+            {
+                var tags = product.Tags.Split(',');
+                foreach (var tag in tags)
+                {
+                    var unsignTag = StringHelper.ToUnsignString(tag);
+                    var tagInDb = _tagRepository.GetMulti(x => x.ID == unsignTag).FirstOrDefault();
+                    if (tagInDb == null)
+                    {
+                        tagInDb = new Tag()
+                        {
+                            ID = unsignTag,
+                            Name = tag,
+                            Type = TagTypeConstant.PRODUCT
+                        };
+                        _tagRepository.Add(tagInDb);
+                    }
+
+                    _productTagRepository.Add(new ProductTag()
+                    {
+                        TagID = tagInDb.ID,
+                        ProductID = productResult.ID
+                    });
+
+                }
+                _uow.Commit();
+                return productResult;
+            }
+            return null;
         }
 
         public Product Update(Product product)
         {
-            var result = _productRepository.Update(product);
-            return _uow.Commit() ? result : null;
+            var productResult = _productRepository.Update(product);
+            _productTagRepository.DeleteMulti(x => x.ProductID == productResult.ID);
+
+            var tags = product.Tags.Split(',');
+            foreach (var tag in tags)
+            {
+                var unsignTag = StringHelper.ToUnsignString(tag);
+                var tagInDb = _tagRepository.GetMulti(x => x.ID == unsignTag).FirstOrDefault();
+                if (tagInDb == null)
+                {
+                    tagInDb = new Tag()
+                    {
+                        ID = unsignTag,
+                        Name = tag,
+                        Type = TagTypeConstant.PRODUCT
+                    };
+                    _tagRepository.Add(tagInDb);
+                }
+
+                _productTagRepository.Add(new ProductTag()
+                {
+                    TagID = tagInDb.ID,
+                    ProductID = productResult.ID
+                });
+
+            }
+            _uow.Commit();
+            return productResult;
         }
 
         public Product Delete(Product product)
@@ -85,6 +148,6 @@ namespace VShop.Service
                 return _productRepository.GetMulti(x => x.ID == id, include).FirstOrDefault();
             }
             return _productRepository.GetSingleById(id);
-        }
+        }      
     }
 }

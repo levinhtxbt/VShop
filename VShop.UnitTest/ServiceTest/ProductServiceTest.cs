@@ -19,7 +19,7 @@ namespace VShop.UnitTest.ServiceTest
         {
             _mockRepository = new Mock<IProductRepository>();
             _mockUOW = new Mock<IUnitOfWork>();
-            _objService = new ProductService(_mockRepository.Object, _mockUOW.Object);
+            //_objService = new ProductService(_mockRepository.Object, _mockUOW.Object);
         }
 
         [TestMethod, TestCategory("B")]
