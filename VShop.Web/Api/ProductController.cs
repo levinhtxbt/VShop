@@ -14,6 +14,7 @@ using VShop.Service;
 
 namespace VShop.Web.Api
 {
+    [Authorize]
     [RoutePrefix("api/product")]
     public class ProductController : BaseApiController
     {

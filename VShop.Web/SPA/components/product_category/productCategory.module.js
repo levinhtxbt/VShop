@@ -10,14 +10,17 @@
 
         $stateProvider.state('productCategory', {
             url: '/product-category',
+            parent: 'base',
             templateUrl: '/spa/components/product_category/productCategoryView.html',
             controller: 'productCategoryController'
         }).state('productCategoryAdd', {
             url: '/product-category/add',
+            parent: 'base',
             templateUrl: '/spa/components/product_category/productCategoryForm.html',
             controller: 'productCategoryAddController'
         }).state('productCategoryEdit', {
             url: '/product-category/edit/:id',
+            parent: 'base',
             templateUrl: '/spa/components/product_category/productCategoryForm.html',
             controller: 'productCategoryEditController'
         });

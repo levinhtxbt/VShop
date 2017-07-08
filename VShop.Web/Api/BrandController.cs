@@ -12,6 +12,7 @@ using VShop.Service;
 
 namespace VShop.Web.Api
 {
+    [Authorize]
     [RoutePrefix("api/brand")]
     public class BrandController : BaseApiController
     {

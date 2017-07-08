@@ -239,6 +239,7 @@
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\BrandController.cs" />
+    <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -261,6 +262,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\libs\angular-loading-bar\build\loading-bar.css" />
+    <Content Include="Content\libs\angular-loading-bar\build\loading-bar.js" />
+    <Content Include="Content\libs\angular-loading-bar\build\loading-bar.min.css" />
+    <Content Include="Content\libs\angular-loading-bar\build\loading-bar.min.js" />
+    <Content Include="Content\libs\angular-loading-bar\Gruntfile.js" />
+    <Content Include="Content\libs\angular-loading-bar\index.js" />
+    <Content Include="Content\libs\angular-loading-bar\src\loading-bar.css" />
+    <Content Include="Content\libs\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="Content\libs\angular-local-storage\.gitattributes" />
+    <Content Include="Content\libs\angular-local-storage\.gitignore" />
+    <Content Include="Content\libs\angular-local-storage\demo\demo-app.js" />
+    <Content Include="Content\libs\angular-local-storage\demo\demo-style.css" />
+    <Content Include="Content\libs\angular-local-storage\demo\demo.html" />
+    <Content Include="Content\libs\angular-local-storage\dist\angular-local-storage.js" />
+    <Content Include="Content\libs\angular-local-storage\dist\angular-local-storage.min.js" />
+    <Content Include="Content\libs\angular-local-storage\index.js" />
     <Content Include="Content\libs\ckfinder\ckfinder.html" />
     <Content Include="Content\libs\ckfinder\ckfinder.js" />
     <Content Include="Content\libs\ckfinder\config.js" />
@@ -4294,6 +4311,9 @@
     <Content Include="SPA\components\brand\brandListView.html" />
     <Content Include="SPA\components\home\homeController.js" />
     <Content Include="SPA\components\home\homeView.html" />
+    <Content Include="SPA\components\home\rootController.js" />
+    <Content Include="SPA\components\login\loginController.js" />
+    <Content Include="SPA\components\login\loginView.html" />
     <Content Include="SPA\components\product\productAddController.js" />
     <Content Include="SPA\components\product\productController.js" />
     <Content Include="SPA\components\product\productEditController.js" />
@@ -4310,11 +4330,15 @@
     <Content Include="SPA\shared\directives\pageDirective.html" />
     <Content Include="SPA\shared\directives\pageDirective.js" />
     <Content Include="SPA\shared\filters\statusFilter.js" />
+    <Content Include="SPA\shared\models\authData.js" />
     <Content Include="SPA\shared\services\apiService.js" />
+    <Content Include="SPA\shared\services\authenticationService.js" />
     <Content Include="SPA\shared\services\commonService.js" />
     <Content Include="SPA\shared\services\dateUtils.js" />
+    <Content Include="SPA\shared\services\loginService.js" />
     <Content Include="SPA\shared\services\notificationService.js" />
     <Content Include="SPA\shared\services\uploadService.js" />
+    <Content Include="SPA\shared\views\baseView.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -4778,6 +4802,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\CKFinder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\libs\angular-loading-bar\.bower.json" />
+    <Content Include="Content\libs\angular-loading-bar\bower.json" />
+    <Content Include="Content\libs\angular-loading-bar\CHANGELOG.md" />
+    <Content Include="Content\libs\angular-loading-bar\CONTRIBUTING.md" />
+    <Content Include="Content\libs\angular-loading-bar\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\libs\angular-loading-bar\LICENSE" />
+    <Content Include="Content\libs\angular-loading-bar\package.json" />
+    <Content Include="Content\libs\angular-loading-bar\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Content\libs\angular-loading-bar\README.md" />
+    <Content Include="Content\libs\angular-local-storage\.bower.json" />
+    <Content Include="Content\libs\angular-local-storage\.bowerrc" />
+    <Content Include="Content\libs\angular-local-storage\.editorconfig" />
+    <Content Include="Content\libs\angular-local-storage\.travis.yml" />
+    <Content Include="Content\libs\angular-local-storage\bower.json" />
+    <Content Include="Content\libs\angular-local-storage\CHANGELOG.md" />
+    <Content Include="Content\libs\angular-local-storage\dist\angular-local-storage.min.js.map" />
+    <Content Include="Content\libs\angular-local-storage\LICENSE" />
+    <Content Include="Content\libs\angular-local-storage\package.json" />
+    <Content Include="Content\libs\angular-local-storage\README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
