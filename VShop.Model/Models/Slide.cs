@@ -26,5 +26,6 @@ namespace VShop.Model
         public string URL { get; set; }
 
         public int? DisplayOrder { get; set; }
+
     }
 }

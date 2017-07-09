@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VShop.Common.Constants;
 using VShop.Common.Helpers;
@@ -148,6 +149,17 @@ namespace VShop.Service
                 return _productRepository.GetMulti(x => x.ID == id, include).FirstOrDefault();
             }
             return _productRepository.GetSingleById(id);
-        }      
+        }
+
+        public IEnumerable<Product> GetLastestProduct(int count)
+        {
+            return _productRepository.GetAll().OrderByDescending(p => p.CreateDate).Take(count);
+        }
+
+        public IEnumerable<Product> GetHotProduct(int count)
+        {
+            return _productRepository.GetAll().Where(x=>x.HotFlag).OrderByDescending(p => p.ViewCount).Take(count);
+
+        }
     }
 }

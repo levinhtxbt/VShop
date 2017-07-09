@@ -254,14 +254,79 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configurations\AutofacConfiguration.cs" />
     <Compile Include="Configurations\AutoMapperConfiguration.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductCategoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\client\css\bootstrap.css" />
+    <Content Include="Content\client\css\etalage.css" />
+    <Content Include="Content\client\css\form.css" />
+    <Content Include="Content\client\css\style.css" />
+    <Content Include="Content\client\images\a-star.png" />
+    <Content Include="Content\client\images\arrow1.png" />
+    <Content Include="Content\client\images\arrow2.png" />
+    <Content Include="Content\client\images\avatar.png" />
+    <Content Include="Content\client\images\b-arrow.png" />
+    <Content Include="Content\client\images\ba.jpg" />
+    <Content Include="Content\client\images\baa.jpg" />
+    <Content Include="Content\client\images\bag.jpg" />
+    <Content Include="Content\client\images\bag1.jpg" />
+    <Content Include="Content\client\images\bo.jpg" />
+    <Content Include="Content\client\images\bott.jpg" />
+    <Content Include="Content\client\images\bottle.jpg" />
+    <Content Include="Content\client\images\ch.jpg" />
+    <Content Include="Content\client\images\facebook.png" />
+    <Content Include="Content\client\images\gpluse.png" />
+    <Content Include="Content\client\images\img-sprite.png" />
+    <Content Include="Content\client\images\label_new.png" />
+    <Content Include="Content\client\images\logo.png" />
+    <Content Include="Content\client\images\pi.jpg" />
+    <Content Include="Content\client\images\pi1.jpg" />
+    <Content Include="Content\client\images\pi2.jpg" />
+    <Content Include="Content\client\images\pi3.jpg" />
+    <Content Include="Content\client\images\pi4.jpg" />
+    <Content Include="Content\client\images\pic.jpg" />
+    <Content Include="Content\client\images\pic1.jpg" />
+    <Content Include="Content\client\images\pic10.jpg" />
+    <Content Include="Content\client\images\pic11.jpg" />
+    <Content Include="Content\client\images\pic12.jpg" />
+    <Content Include="Content\client\images\pic13.jpg" />
+    <Content Include="Content\client\images\pic2.jpg" />
+    <Content Include="Content\client\images\pic3.jpg" />
+    <Content Include="Content\client\images\pic4.jpg" />
+    <Content Include="Content\client\images\pic5.jpg" />
+    <Content Include="Content\client\images\pic6.jpg" />
+    <Content Include="Content\client\images\pic7.jpg" />
+    <Content Include="Content\client\images\pic8.jpg" />
+    <Content Include="Content\client\images\review.png" />
+    <Content Include="Content\client\images\rss.png" />
+    <Content Include="Content\client\images\s1.jpg" />
+    <Content Include="Content\client\images\s2.jpg" />
+    <Content Include="Content\client\images\s3.jpg" />
+    <Content Include="Content\client\images\s4.jpg" />
+    <Content Include="Content\client\images\sh.jpg" />
+    <Content Include="Content\client\images\si1.jpg" />
+    <Content Include="Content\client\images\si2.jpg" />
+    <Content Include="Content\client\images\si3.jpg" />
+    <Content Include="Content\client\images\si4.jpg" />
+    <Content Include="Content\client\images\star.png" />
+    <Content Include="Content\client\images\tick1.png" />
+    <Content Include="Content\client\images\twitter.png" />
+    <Content Include="Content\client\images\wa.jpg" />
+    <Content Include="Content\client\images\wat.jpg" />
+    <Content Include="Content\client\images\zoom.png" />
+    <Content Include="Content\client\js\jquery.etalage.min.js" />
+    <Content Include="Content\client\js\jquery.flexisel.js" />
+    <Content Include="Content\client\js\jquery.min.js" />
+    <Content Include="Content\client\js\jquery.wmuSlider.js" />
     <Content Include="Content\libs\angular-loading-bar\build\loading-bar.css" />
     <Content Include="Content\libs\angular-loading-bar\build\loading-bar.js" />
     <Content Include="Content\libs\angular-loading-bar\build\loading-bar.min.css" />
@@ -4351,7 +4416,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -4364,9 +4428,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
@@ -4801,9 +4862,6 @@
     <Content Include="NLog.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\CKFinder.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\libs\angular-loading-bar\.bower.json" />
     <Content Include="Content\libs\angular-loading-bar\bower.json" />
     <Content Include="Content\libs\angular-loading-bar\CHANGELOG.md" />
@@ -4823,6 +4881,48 @@
     <Content Include="Content\libs\angular-local-storage\LICENSE" />
     <Content Include="Content\libs\angular-local-storage\package.json" />
     <Content Include="Content\libs\angular-local-storage\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\client\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_MenuCategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Slide.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\About\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ProductCategory\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutWithMenuCategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\MyProfile.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

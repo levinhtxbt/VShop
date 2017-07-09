@@ -20,5 +20,7 @@ namespace VShop.Service
         ProductCategory GetById(int id, string[] include = null);
 
         IEnumerable<ProductCategory> GetByPaging(string keyword, int pageIndex, int pageSize, out int totalCount, string[] include = null);
+
+        IEnumerable<ProductCategory> GetMenuCategory();
     }
 }

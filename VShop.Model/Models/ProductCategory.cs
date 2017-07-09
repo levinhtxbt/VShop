@@ -39,6 +39,8 @@ namespace VShop.Model
 
         public virtual ICollection<Product> Products { get; set; }
 
+        public virtual ICollection<ProductCategory> Children { get; set; }
+
         [ForeignKey("ParentID")]
         public virtual ProductCategory Parent { get; set; }
     }

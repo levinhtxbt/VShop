@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace VShop.Model
 {
@@ -18,19 +19,5 @@ namespace VShop.Model
         public string URL { get; set; }
 
         public int? DisplayOrder { get; set; }
-
-        public string MetaDescription { get; set; }
-
-        public string MetaKeyword { get; set; }
-
-        public DateTime CreateDate { get; set; }
-
-        public string CreateBy { get; set; }
-
-        public DateTime? UpdateDate { get; set; }
-
-        public string UpdateBy { get; set; }
-
-        public bool Status { get; set; }
     }
 }

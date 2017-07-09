@@ -95,6 +95,8 @@
     <Compile Include="Responses\ProductListResponse.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\Home\MenuCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Home\SlideViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OrderDetailViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
@@ -104,8 +106,8 @@
     <Compile Include="ViewModels\ProductAutoCompleteViewModel.cs" />
     <Compile Include="ViewModels\ProductCategoryViewModel.cs" />
     <Compile Include="ViewModels\ProductTagViewModel.cs" />
-    <Compile Include="ViewModels\ProductViewModel.cs" />
-    <Compile Include="ViewModels\SlideViewModel.cs" />
+    <Compile Include="ViewModels\Product\ProductViewModel.cs" />
+    <Compile Include="ViewModels\Product\SimpleProductViewModel.cs" />
     <Compile Include="ViewModels\TagViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

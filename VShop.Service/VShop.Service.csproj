@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implements\BrandService.cs" />
+    <Compile Include="Implements\CommonService.cs" />
     <Compile Include="Implements\LogService.cs" />
     <Compile Include="Implements\ProductCategoryService.cs" />
     <Compile Include="Interfaces\IBrandService.cs" />
+    <Compile Include="Interfaces\ICommonService.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Implements\ProductService.cs" />
     <Compile Include="Interfaces\IProductCategoryService.cs" />

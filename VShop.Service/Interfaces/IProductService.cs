@@ -20,5 +20,9 @@ namespace VShop.Service
         Product GetById(int id, string[] include = null);
 
         IEnumerable<Product> GetByPaging(string keyword, int pageIndex, int pageSize, out int totalCount, string[] include = null);
+
+        IEnumerable<Product> GetLastestProduct(int count);
+
+        IEnumerable<Product> GetHotProduct(int count);
     }
 }

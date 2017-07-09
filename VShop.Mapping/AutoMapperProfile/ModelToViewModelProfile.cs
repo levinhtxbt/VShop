@@ -13,8 +13,12 @@ namespace VShop.Mapping.AutoMapperProfile
             CreateMap<PostTag, PostTagViewModel>();
             CreateMap<Post, PostViewModel>();
             CreateMap<ProductCategory, ProductCategoryViewModel>();
+
             CreateMap<ProductTag, ProductTagViewModel>();
             CreateMap<Product, ProductViewModel>();
+            CreateMap<Product, SimpleProductViewModel>()
+                .ForMember(des => des.ProductCategoryName, x => x.MapFrom(src => src.ProductCategory.Name));
+
             CreateMap<Tag, TagViewModel>();
             CreateMap<Slide, SlideViewModel>();
             CreateMap<Brand, BrandViewModel>();

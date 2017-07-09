@@ -83,5 +83,9 @@ namespace VShop.Service.Implements
             return listProduct;
         }
 
+        public IEnumerable<ProductCategory> GetMenuCategory()
+        {
+            return _productCategoryRepository.GetAll(includes: new string[] { "Children" }).Where(x => x.ParentID == null);
+        }
     }
 }

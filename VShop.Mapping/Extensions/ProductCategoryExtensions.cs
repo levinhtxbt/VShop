@@ -42,5 +42,21 @@ namespace VShop.Mapping.Extensions
             model.MetaDescription = request.MetaDescription;
             model.MetaKeyword     = request.MetaKeyword;
         }
+
+        public static MenuProductCategoryViewModel ToMenuCategoryViewModel(this ProductCategory model)
+        {
+            var viewModel          = new MenuProductCategoryViewModel();
+            viewModel.ID           = model.ID;
+            viewModel.Title        = model.Name;
+            viewModel.Alias        = model.Alias;
+            viewModel.DisplayOrder = model.DisplayOrder;
+            viewModel.ImageUrl     = model.Image;
+            if (model.Children !=null && model.Children.Count > 0)
+            {
+                viewModel.Children = new List<MenuProductCategoryViewModel>();
+                viewModel.Children = model.Children.Select(x => x.ToMenuCategoryViewModel()).ToList();
+            }
+            return viewModel;
+        }
     }
 }
